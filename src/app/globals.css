@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -7,7 +8,6 @@
   --color-background: #FCFCF9;
 }
 
-  /* colors */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -15,18 +15,230 @@
   --font-body: var(--font-montserrat);
 }
 
- @layer utilities {
-  .container-custom {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-}
 
 body {
   font-family: var(--font-body);
+  background-color: var(--color-background);
 }
 
 .font-primary {
   font-family: var(--font-primary);
+}
+
+
+.container-custom {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content-column {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+.gallery-banner {
+  background: var(--color-secondary); 
+  padding: 40px 0;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.gallery-banner h2 {
+  color: #ffffff;
+  font-family: var(--font-primary);
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.gallery-banner h2::before, .gallery-banner h2::after {
+  display: none !important; 
+}
+
+
+.gallery-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin: 24px 0;
+  max-width: 100%;
+}
+
+.gallery-tabs button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 24px; 
+       
+   
+  border: 1px solid #ccc; 
+  border-radius: 24px;   
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.gallery-tabs button.active {
+  background: var(--color-secondary); 
+  color: white;
+  border-color: var(--color-secondary);
+}
+
+.gallery-item {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.contact-section {
+  background: var(--color-secondary); 
+  padding: 80px 0;
+  color: white;
+}
+
+.contact-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 60px;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+
+.contact-info h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.contact-info .subtext {
+  font-size: 16px;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.info-details p {
+  margin-bottom: 15px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+.contact-form-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  color: #333;
+}
+
+.contact-form-card h3 {
+  font-size: 18px;
+  color: var(--color-secondary);
+  margin-bottom: 5px;
+}
+
+.contact-form-card p {
+  font-size: 13px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.contact-form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form-card input, .contact-form-card textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.contact-form-card textarea {
+  height: 100px;
+  resize: none;
+}
+
+.contact-form-card button {
+  background: var(--color-secondary);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 10px;
+  transition: opacity 0.2s;
+}
+
+.contact-form-card button:hover {
+  opacity: 0.9;
+}
+
+
+.map-placeholder {
+  width: 100%;
+  height: 400px;
+  background: #2c2c2c; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #444;
+}
+
+.map-placeholder span {
+  font-size: 40px;
+  letter-spacing: 5px;
+  opacity: 0.5;
+  color: white;
+}
+
+
+@media (max-width: 992px) {
+  .contact-top {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .gallery-item.big {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .gallery-banner h2 {
+    font-size: 24px;
+  }
+  .gallery-banner {
+    height: 100px;
+  }
 }

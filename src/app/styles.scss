@@ -1,12 +1,12 @@
 @layer utilities {
-  .demo {
-    .swiper {
-      pointer-events: none;
-    }
-    .swiper-wrapper {
-      transition-timing-function: linear !important;
-    }
+  .demo .swiper {
+    pointer-events: none;
   }
+
+  .demo .swiper-wrapper {
+    transition-timing-function: linear !important;
+  }
+}
   .box-shadow {
     box-shadow: 0 7px 29px rgba(100, 100, 111, 0.2);
   }
@@ -37,4 +37,123 @@
       padding-inline: 0;
     }
   }
+
+
+
+
+
+.gallery-banner {
+  background: var(--color-secondary);
+  padding: 40px 0;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.gallery-banner h2 {
+  color: #fff;
+  font-family: 'Aboreto', serif;
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.gallery-banner h2::before,
+.gallery-banner h2::after {
+  display: none;
+}
+
+/* CONTACT PAGE */
+
+.contact-section {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* LEFT SIDE */
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.contact-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #110D3C;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-item {
+  display: flex;
+  gap: 12px;
+  font-size: 16px;
+  color: #686868;
+  align-items: flex-start;
+}
+
+.contact-divider {
+  height: 1px;
+  width: 100%;
+  background: #e5e5e5;
+}
+
+/* FORM */
+
+.contact-form-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 7px 29px rgba(100, 100, 111, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #110D3C;
+  text-transform: uppercase;
+}
+
+.contact-form-note {
+  font-size: 14px;
+  color: #686868;
+}
+
+/* MAP SECTION */
+
+.contact-map-section {
+  margin-top: 60px;
+}
+
+.contact-map-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 2.2;
+  border-radius: 12px;
+  overflow: hidden;
 }

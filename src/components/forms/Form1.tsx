@@ -1,8 +1,23 @@
 "use client";
 
 import useBookingForm from "@/hooks/useBookingForm";
-import { countries } from "@/utils/constent";
-import { ArrowUpIcons, FromDropDown } from "@/utils/icons";
+import { countries } from "@/utils/countryCode";
+import { OutLineDropDownIcon, RightTickIcon } from "@/utils/icons";
+
+type FieldType = "text" | "email" | "tel" | "textarea";
+
+type FormField = {
+  name: keyof typeof initialValues;
+  label: string;
+  type: FieldType;
+};
+
+const initialValues = {
+  name: "",
+  phone: "",
+  email: "",
+  message: "",
+};
 
 const Form1 = () => {
   const {
@@ -16,114 +31,105 @@ const Form1 = () => {
     includeMessage: true,
     onSubmitSuccess: () => {},
   });
-  const formFields = [
-    {
-      name: "name",
-      label: "Full Name*",
-      type: "text",
-      value: formData.name,
-      onChange: handleChange,
-    },
-    {
-      name: "phone",
-      label: "Mobile Number",
-      type: "tel",
-      value: formData.phone,
-      onChange: handleChange,
-    },
-    {
-      name: "email",
-      label: "Email ID",
-      type: "email",
-      value: formData.email,
-      onChange: handleChange,
-    },
-    {
-      name: "message",
-      label: "Type your message...",
-      type: "textarea",
-      value: formData.message,
-      onChange: handleChange,
-    },
+
+  const formFields: FormField[] = [
+    { name: "name", label: "Full Name*", type: "text" },
+    { name: "phone", label: "Mobile Number", type: "tel" },
+    { name: "email", label: "Email ID", type: "email" },
+    { name: "message", label: "Type your message...", type: "textarea" },
   ];
+
+  const renderField = (field: FormField) => {
+    const value = formData[field.name];
+
+    if (field.type === "textarea") {
+      return (
+        <textarea
+          name={field.name}
+          placeholder={field.label}
+          rows={4}
+          className="p-4 border border-[#D7D7D7] rounded-lg w-full focus:outline-none resize-none"
+          value={value}
+          onChange={handleChange}
+        />
+      );
+    }
+
+    if (field.type === "tel") {
+      return (
+        <div className="flex">
+          {/* COUNTRY CODE */}
+          <div className="relative">
+            <select
+              name="countryCode"
+              value={formData.countryCode}
+              onChange={(e) =>
+                setFieldValue("countryCode", e.target.value)
+              }
+              className="py-4 ps-4 border rounded-l-lg appearance-none"
+            >
+              {countries.map((country) => (
+                <option key={country.code} value={country.code}>
+                  {country.code} {country.name}
+                </option>
+              ))}
+            </select>
+
+            <span className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none">
+              <OutLineDropDownIcon />
+            </span>
+          </div>
+
+          {/* PHONE INPUT */}
+          <input
+            type="tel"
+            name="phone"
+            placeholder={field.label}
+            value={value}
+            onChange={handleChange}
+            className="p-4 border border-l-0 rounded-r-lg w-full"
+          />
+        </div>
+      );
+    }
+
+    return (
+      <input
+        type={field.type}
+        name={field.name}
+        placeholder={field.label}
+        value={value}
+        onChange={handleChange}
+        className="p-4 border border-[#D7D7D7] rounded-lg w-full"
+      />
+    );
+  };
+
   return (
     <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-      {formFields.map((field, index) => (
-        <>
-          {field.type === "textarea" ? (
-            <textarea
-              key={index}
-              name={field.name}
-              placeholder={field.label}
-              rows={4}
-              className="p-4 border border-[#D7D7D7] rounded-lg w-full placeholder:text-[#7F7F7F] focus:outline-none text-p2 resize-none"
-              value={field.value}
-              onChange={field.onChange}
-            ></textarea>
-          ) : field.type === "tel" ? (
-            <div className="flex" key={index}>
-              <div className="relative">
-                <select
-                  className="py-4 ps-4 border-y border-x rounded-l-lg cursor-pointer border-[#D7D7D7] appearance-none w-full placeholder:text-[#7F7F7F] focus:outline-none text-p2"
-                  name="countryCode"
-                  value={formData.countryCode}
-                  onChange={(e) => setFieldValue("countryCode", e.target.value)}
-                  style={{ width: `${formData.countryCode.length * 3}ch` }}
-                  aria-label="Country Code"
-                >
-                  {countries.map((country, index) => (
-                    <option
-                      key={index}
-                      value={country.code}
-                      className="rounded-lg"
-                    >
-                      {country.code} {country.name}
-                    </option>
-                  ))}
-                </select>
-                <span className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none">
-                  <FromDropDown />
-                </span>
-              </div>
-              <input
-                type={field.type}
-                name={field.name}
-                placeholder={field.label}
-                className="p-4 border-y border-r border-[#D7D7D7] rounded-r-lg w-full placeholder:text-[#7F7F7F] focus:outline-none text-p2"
-                value={field.value}
-                onChange={field.onChange}
-              />
-            </div>
-          ) : (
-            <input
-              key={index}
-              type={field.type}
-              name={field.name}
-              placeholder={field.label}
-              className="p-4 border border-[#D7D7D7] rounded-lg w-full placeholder:text-[#7F7F7F] focus:outline-none text-p2"
-              value={field.value}
-              onChange={field.onChange}
-            />
-          )}
+      {formFields.map((field) => (
+        <div key={field.name}>
+          {renderField(field)}
 
           {errors[field.name] && (
-            <p className="text-red-500">{errors[field.name]}</p>
+            <p className="text-red-500 text-sm">
+              {errors[field.name]}
+            </p>
           )}
-        </>
+        </div>
       ))}
+
       <button
         type="submit"
-        className="bg-p1 rounded-lg text-white text-lg py-4"
+        className="bg-p1 rounded-lg text-white text-lg py-4 flex items-center justify-center gap-2"
       >
         {isSubmitting ? (
           "Submitting..."
         ) : (
-          <span className="flex items-center justify-center gap-2.5">
-            Send Enquiry{" "}
-            <span>
-              <ArrowUpIcons />
-            </span>{" "}
-          </span>
+          <>
+            Send Enquiry
+            <RightTickIcon />
+          </>
         )}
       </button>
     </form>
