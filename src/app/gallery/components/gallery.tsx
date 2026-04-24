@@ -30,18 +30,19 @@ export default function Gallery({ galleryImages }: Props) {
       : galleryImages.filter((img) => img.alt === selected);
 
   const gridPattern: string[] = [
-    "col-span-4 row-span-3",
+    "col-span-4 row-span-4",
     "col-span-2 row-span-2",
-    "col-span-2 row-span-1",
     "col-span-2 row-span-2",
-    "col-span-4 row-span-3",
-    "col-span-2 row-span-1",
+    "col-span-2 row-span-2",
+    "col-span-4 row-span-4",
+    "col-span-2 row-span-2",
   ];
 
   return (
     <SectionWithContainer
+      defaultPadding={false}
       sectionClassName="py-6"
-      containerClassName="flex flex-col gap-[56px] max-w-[1320px] mx-auto w-full"
+      containerClassName="flex flex-col"
     >
       {/* FILTER BUTTONS */}
       <div className="gallery-tabs mb-6 flex flex-wrap gap-3 justify-center">
@@ -61,16 +62,11 @@ export default function Gallery({ galleryImages }: Props) {
         {filtered.map((img, index) => (
           <div
             key={index}
-            className={`relative w-full h-full ${
+            className={`relative w-full h-full aspect-auto ${
               gridPattern[index % gridPattern.length]
             }`}
           >
-            <Image
-              src={img.src}
-              alt={img.alt}
-              fill
-              className="object-cover"
-            />
+            <Image src={img.src} alt={img.alt} fill className="object-cover" />
           </div>
         ))}
       </div>

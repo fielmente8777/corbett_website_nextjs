@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { useDebounce } from "./useDebounce";
-import { contact } from "@/utils/constent";
+import { contacts } from '@/utils/constant';
 
 interface BookingFormData {
   name: string;
@@ -203,7 +203,7 @@ const useBookingForm = ({
       const { data } = await axios.post(
         "https://nexon.eazotel.com/eazotel/addcontacts",
         {
-          Domain: contact.formDomain,
+          Domain: contacts.formDomain,
           Name: formData.name,
           email: formData.email,
           Contact: formData.countryCode + formData.phone,
@@ -212,7 +212,7 @@ const useBookingForm = ({
           Description: description,
           created_from: "webform",
           source_url: window.location.href,
-          hId: contact.formHid ? contact.formHid : formHid,
+          // hId: contacts.formHid ? contacts.formHid : formHid,
         }
       );
 

@@ -22,7 +22,7 @@ export default function ContactPage() {
       </section>
 
       {/* 🔹 MAP SECTION */}
-      <section className="contact-map-section max_width">
+      <section className="contact-map-section">
         <ContactMap
           mapUrl={contactPageData.travelInfo.mapUrl}
         />

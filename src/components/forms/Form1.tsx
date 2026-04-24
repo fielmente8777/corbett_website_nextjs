@@ -2,7 +2,6 @@
 
 import useBookingForm from "@/hooks/useBookingForm";
 import { countries } from "@/utils/countryCode";
-import { OutLineDropDownIcon, RightTickIcon } from "@/utils/icons";
 
 type FieldType = "text" | "email" | "tel" | "textarea";
 
@@ -128,7 +127,7 @@ const Form1 = () => {
         ) : (
           <>
             Send Enquiry
-            <RightTickIcon />
+            {/* <RightTickIcon /> */}
           </>
         )}
       </button>
@@ -137,3 +136,33 @@ const Form1 = () => {
 };
 
 export default Form1;
+
+
+export const OutLineDropDownIcon = () => (
+  <svg
+    width={24}
+    height={12}
+    viewBox="0 0 24 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_2084_2516)">
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M11.9967 8.6575L19.0677 1.5865L20.4817 3.0005L12.7037 10.7785C12.5162 10.966 12.2619 11.0713 11.9967 11.0713C11.7316 11.0713 11.4772 10.966 11.2897 10.7785L3.51172 3.0005L4.92572 1.5865L11.9967 8.6575Z"
+        fill="#686868"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_2084_2516">
+        <rect
+          width={12}
+          height={24}
+          fill="white"
+          transform="translate(5.24537e-07 12) rotate(-90)"
+        />
+      </clipPath>
+    </defs>
+  </svg>
+)

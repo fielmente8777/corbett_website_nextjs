@@ -1,4 +1,5 @@
-import { FillPhoneIcon, FillLocationIcon, FillMailIcon } from "@/utils/icons";
+import { contacts } from "@/utils/constant";
+import { CallIcon, LocationIcon, MailIcon } from "@/utils/icons";
 
 export const contactPageData = {
   visitData: {
@@ -8,18 +9,17 @@ export const contactPageData = {
         label:
           "8th Floor, Jaina Tower-1, District Centre, Janakpuri, West Delhi, India",
         href: "#",
-        icon: FillLocationIcon ,
+        icon: LocationIcon,
       },
       {
         label: "+91 89589 88800, +91 98710 10068",
         href: "tel:+918958988800",
-        icon: FillPhoneIcon ,
+        icon: CallIcon,
       },
       {
-        label:
-          "reservations@corbettthegrand.com, info@corbettthegrand.com",
+        label: "reservations@corbettthegrand.com, info@corbettthegrand.com",
         href: "mailto:reservations@corbettthegrand.com",
-        icon: FillMailIcon,
+        icon: MailIcon,
       },
     ],
   },
@@ -40,6 +40,6 @@ export const contactPageData = {
   },
 
   travelInfo: {
-    mapUrl: "https://www.google.com/maps?q=Janakpuri+West+Delhi&output=embed",
+    mapUrl: contacts.addresses[0].mapUrl,
   },
 };

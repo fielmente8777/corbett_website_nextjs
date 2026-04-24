@@ -7,9 +7,7 @@ export default function Page() {
     <main>
       <GalleryBanner title={galleryPageData.bannerData.title} />
 
-      <Gallery
-  galleryImages={galleryPageData.gallerySection.galleryImages}
-/>
+      <Gallery galleryImages={galleryPageData.gallerySection.galleryImages} />
     </main>
   );
 }
