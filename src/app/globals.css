@@ -4,13 +4,17 @@
   --color-primary: #171717;
   --color-secondary: #7B584F;
   --color-light: #686868;
+  --color-dark:#343434;
   --color-background: #FCFCF9;
 }
 
   /* colors */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-primary: #171717;
+  --color-secondary: #7B584F;
+  --color-light: #686868;
+  --color-dark:#343434;
+  --color-background: #FCFCF9;
   --font-primary: var(--font-aboreto);
   --font-body: var(--font-montserrat);
 }

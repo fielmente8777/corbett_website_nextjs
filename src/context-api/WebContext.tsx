@@ -5,11 +5,11 @@ interface WebContextProps {
   imgCurrentIndex: number;
   imageArray: string[];
   isOpenPillarPopup: boolean;
-  isOpenPopUpForm: boolean;
+  isOpenPopupForm: boolean;
+  setIsOpenPopupForm: React.Dispatch<React.SetStateAction<boolean>>;
   isOpenPopUpForm2: boolean;
   isOpenImagePopup: boolean;
   pillarPopupData: { title: string; description: string };
-  setIsOpenPopUpForm: (value: boolean) => void;
   setPillarPopupData: (value: { title: string; description: string }) => void;
   setIsOpenPillarPopup: (value: boolean) => void;
   setImgCurrentIndex: (value: number) => void;
@@ -23,7 +23,6 @@ interface WebContextProps {
 
 export const WebContext = createContext<WebContextProps>({
   imgCurrentIndex: 0,
-  isOpenPopUpForm: false,
   isOpenPillarPopup: false,
   imageArray: [],
   isOpenImagePopup: false,
@@ -31,12 +30,13 @@ export const WebContext = createContext<WebContextProps>({
   isOpenPopUpForm2: false,
   setIsOpenPopUpForm2: () => {},
   setImgCurrentIndex: () => {},
-  setIsOpenPopUpForm: () => {},
   setPillarPopupData: () => {},
   setIsOpenPillarPopup: () => {},
   setImageArray: () => {},
   setIsOpenImagePopup: () => {},
   handleImagePopup: () => {},
+  isOpenPopupForm: false,
+  setIsOpenPopupForm: () => {},
 });
 
 interface WebProviderProps {
@@ -48,7 +48,7 @@ export const WebProvider: React.FC<WebProviderProps> = ({ children }) => {
     description: string;
   }>({ title: "", description: "" });
   const [isOpenPillarPopup, setIsOpenPillarPopup] = useState(false);
-  const [isOpenPopUpForm, setIsOpenPopUpForm] = useState(false);
+  const [isOpenPopupForm, setIsOpenPopupForm] = useState(false);
 
   const [imgCurrentIndex, setImgCurrentIndex] = useState(0);
   const [imageArray, setImageArray] = useState<string[]>([]);
@@ -75,8 +75,8 @@ export const WebProvider: React.FC<WebProviderProps> = ({ children }) => {
     setPillarPopupData,
     isOpenPillarPopup,
     setIsOpenPillarPopup,
-    isOpenPopUpForm,
-    setIsOpenPopUpForm,
+    isOpenPopupForm,
+    setIsOpenPopupForm,
     handleImagePopup,
   };
   return <WebContext.Provider value={value}>{children}</WebContext.Provider>;

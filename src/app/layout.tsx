@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import { Aboreto, Montserrat } from "next/font/google";
 import "./globals.css";
 import "./styles.scss";
-
-
+import { WebProvider } from "@/context-api/WebContext";
+import { Footer } from "@/components/footers";
+import NavBar from "@/components/navbar/NavBar";
 
 const aboreto = Aboreto({
   variable: "--font-aboreto",
   weight: "400",
   subsets: ["latin"],
 });
-
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -30,9 +30,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${aboreto.variable} ${montserrat.variable} h-full antialiased`}
+      className={`${aboreto.variable} ${montserrat.variable} scroll-smooth antialiased`}
+      suppressHydrationWarning={true}
     >
-      <body >{children}</body>
+      <body>
+        <WebProvider>
+          <NavBar />
+          {children}
+
+          <Footer />
+        </WebProvider>
+      </body>
     </html>
   );
 }
