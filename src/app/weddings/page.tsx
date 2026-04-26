@@ -1,8 +1,18 @@
+import SlidingTitle from "@/components/slider/SlidingTitle";
+import { weddingPageData } from "./components/pageData";
+import Curated from "./components/Curated";
+import Faq from "./components/Faq";
+import VideoBanner from "@/components/Banner/VideoBanner";
+import Intro from "./components/Intro";
+
 function WeddingsPage() {
   return (
     <main>
-      <h1>Weddings Page</h1>
-      <p>Welcome to our weddings page! Here you can find all the information about our wedding services and packages.</p>
+      <VideoBanner {...weddingPageData.banner} />
+      <Intro {...weddingPageData.introData} />
+      <SlidingTitle items={weddingPageData.highlightData.items} />
+      <Curated {...weddingPageData.curatedData} />
+      <Faq {...weddingPageData.faqData} />
     </main>
   );
 }
