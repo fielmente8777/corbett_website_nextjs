@@ -1,12 +1,20 @@
-import WeddingContent from "./components/WeddingContent";
-import WeddingFaq from "./components/WeddingFaq";
+import SlidingTitle from "@/components/slider/SlidingTitle";
 import { weddingPageData } from "./components/pageData";
+import Curated from "./components/Curated";
+import Faq from "./components/Faq";
+import VideoBanner from "@/components/Banner/VideoBanner";
+import Intro from "./components/Intro";
 
-export default function WeddingPage() {
+function WeddingsPage() {
   return (
     <main>
-      <WeddingContent{...weddingPageData.curatedData}/>
-      <WeddingFaq {...weddingPageData.faqData} />
+      <VideoBanner {...weddingPageData.banner} />
+      <Intro {...weddingPageData.introData} />
+      <SlidingTitle items={weddingPageData.highlightData.items} />
+      <Curated {...weddingPageData.curatedData} />
+      <Faq {...weddingPageData.faqData} />
     </main>
   );
 }
+
+export default WeddingsPage;

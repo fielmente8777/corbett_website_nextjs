@@ -1,8 +1,14 @@
+import SlidingTitle from "@/components/slider/SlidingTitle";
+import { homePageData } from "./components/pageData";
+import Intro from "./components/Intro";
+import Nearby from "./components/Nearby";
+
 function HomePage() {
   return (
     <main>
-      <h1>Welcome to the Home Page!</h1>
-      <p>This is the main landing page of our application.</p>
+      <Intro {...homePageData.introData} />
+      <SlidingTitle items={homePageData.highlightData.items} />
+      <Nearby {...homePageData.nearbyData} />
     </main>
   );
 }

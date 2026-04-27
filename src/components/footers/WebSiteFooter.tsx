@@ -90,7 +90,7 @@ const WebSiteFooter = () => {
                       href={item.href}
                       className="flex gap-2"
                     >
-                      <span className={` font-medium capitalize md:text-lg}`}>
+                      <span className="">
                         {item.label}
                       </span>
                     </Link>

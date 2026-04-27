@@ -20,7 +20,7 @@ export interface RoomsTypesProps {
   rooms: {
     images: string[];
     details: string[];
-     rating: string,
+    rating: string;
     name: string;
     size: string;
     description: string;
@@ -32,5 +32,28 @@ export interface RoomsTypesProps {
       label: string;
       href: string;
     };
+  }[];
+}
+
+export interface introProps {
+  title: string;
+  description: string[];
+  image: string;
+  video: {
+    src: string;
+    poster: string;
+  };
+  link: {
+    label: string;
+    href: string;
+  };
+}
+
+export interface NearbyProps {
+  title: string;
+  description: string;
+  items: {
+    title: string;
+    image: string;
   }[];
 }
