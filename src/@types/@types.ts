@@ -57,3 +57,22 @@ export interface NearbyProps {
     image: string;
   }[];
 }
+
+
+export interface BannerWithVideoProps {
+    title: string;
+    subtitle: string;
+    description: string;
+    SocialLinks: {
+        label: string;
+        href: string;
+        icon: JSX.Element;
+    }[];
+    video: string;
+    images: string[];
+    actions: {
+        label: string;
+        href: string;
+    }[];
+    note: string;
+}

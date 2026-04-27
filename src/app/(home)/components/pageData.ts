@@ -1,14 +1,22 @@
+import { SocialLinks } from "@/components/footers/footerData";
+import { contacts } from "@/utils/constant";
+
 export const homePageData = {
   bannerData: {
     title: "Not Just a Stay.",
     subtitle: "A Grand Experience.",
-    description: [
+    description:
       "Immerse yourself in refined comfort, surrounded by the untamed beauty of Corbett.",
-    ],
-    images: ["/home/banner.webp"],
+    SocialLinks,
+    images: ["/home/bnr.png"],
+    video:"",
     actions: [
       { label: "PLAY VIDEO", href: "#" },
       { label: "ABOUT US", href: "/about-us" },
+      {
+        label: "Call:" + contacts.phone[0],
+        href: "tel:" + contacts.phone[1] + "",
+      },
     ],
     note: "Scroll to explore",
   },
@@ -54,8 +62,13 @@ export const homePageData = {
       href: "/contact",
     },
   },
-
-  images: ["/home/wedding.png"],
+  wedding: {
+    link: {
+      label: "Explore Weddings",
+      href: "/weddings",
+    },
+    images: ["/home/wedding.png", "/home/wedding-2.png"],
+  },
 
   nearbyData: {
     title: "NEARBY ATTRACTIONS",
@@ -118,6 +131,6 @@ export const homePageData = {
         image: "images/testi-img1.jpg",
       },
     ],
-    images: ["/home/testimonial.png"],
+    image: "/home/testimonial.png",
   },
 };

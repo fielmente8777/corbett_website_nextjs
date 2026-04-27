@@ -6,7 +6,7 @@ import NearByCard from "../cards/NearByCard";
 
 const NearbySlider: React.FC<{ items: NearbyProps["items"] }> = ({ items }) => {
   return (
-    <div className="rooms-card">
+    <div className="room-card">
       <SwiperCarousel
         data={items || []}
         slidesPerView={1}
