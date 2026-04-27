@@ -2,7 +2,9 @@ import { ReactNode } from "react";
 
 type VisitData = {
   title: string;
+  subtitle: string;
   links: {
+    prefix: string;
     label: string;
     href: string;
     icon: React.ElementType;
@@ -19,45 +21,29 @@ type Props = {
   reservationsData: ReservationsData;
 };
 
-export default function ContactInfo({
-  visitData,
-  reservationsData,
-}: Props) {
+export default function ContactInfo({ visitData, reservationsData }: Props) {
   return (
-    <div className="space-y-10">
+    <div className="flex flex-col gap-6">
 
-      {/* Visit */}
-      <div className="space-y-6">
-        <h2 className="text-3xl font-semibold">{visitData.title}</h2>
-
-        <ul className="space-y-3">
-         {visitData.links.map((item, i) => {
-  const Icon = item.icon; // 
-
-  return (
-    <li key={i} className="flex gap-3">
-      <Icon />   
-      {item.label}
-    </li>
-  );
-})}
-        </ul>
-      </div>
-
-      <div className="h-px bg-gray-200" />
-
-      {/* Reservations */}
-      <div className="space-y-6">
-        <h2 className="text-3xl font-semibold">
-          {reservationsData.title}
+      {/* Title */}
+      <div className="flex flex-col gap-2">
+        <h2 className="font-primary text-3xl font-semibold text-white uppercase tracking-widest">
+          {visitData.title}
         </h2>
-
-        <ul className="space-y-3">
-          {reservationsData.items.map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
-        </ul>
+        <p className="text-sm text-white/70">{visitData.subtitle}</p>
       </div>
+
+      {/* Contact Links */}
+      <ul className="flex flex-col gap-4">
+        {visitData.links.map((item, i) => (
+          <li key={i} className="flex flex-col gap-0.5 text-sm text-white/90 leading-relaxed">
+            <span className="font-semibold text-white">{item.prefix}</span>
+            <a href={item.href} className="text-white/75 hover:text-white transition-colors">
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
 
     </div>
   );

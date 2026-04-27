@@ -1,10 +1,12 @@
-function WeddingsPage() {
+import WeddingContent from "./components/WeddingContent";
+import WeddingFaq from "./components/WeddingFaq";
+import { weddingPageData } from "./components/pageData";
+
+export default function WeddingPage() {
   return (
     <main>
-      <h1>Weddings Page</h1>
-      <p>Welcome to our weddings page! Here you can find all the information about our wedding services and packages.</p>
+      <WeddingContent{...weddingPageData.curatedData}/>
+      <WeddingFaq {...weddingPageData.faqData} />
     </main>
   );
 }
-
-export default WeddingsPage;

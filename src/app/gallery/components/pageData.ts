@@ -17,7 +17,7 @@ export const galleryPageData = {
       { src: "/images/gallery/img2.jpg", alt: "Reception" },
       { src: "/images/gallery/img3.jpg", alt: "Restaurant" },
       { src: "/images/gallery/img6.jpg", alt: "Pool" },
-      
+      {src:"/images/gallery/img2.jpg",alt:"Adventure Activites"},
       { src: "/images/gallery/img4.jpg", alt: "Weddings" },
       { src: "/images/gallery/img5.jpg", alt: "Halls" },
       

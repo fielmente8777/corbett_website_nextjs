@@ -41,13 +41,14 @@ export const weddingPageData = {
       "Every wedding should be as unique as your love. At Corbett The Grand, personalize every detail with curated packages and enjoy a seamless, all-in-one celebration—from stunning vows to elegant bridal suites."
     ],
     images: [
-      "/wedding/curated-1.webp",
-      "/wedding/curated-2.webp"
+      "/images/gallery/wed2.jpg",
+      "/images/gallery/wed3.jpg"
     ]
   },
 
   faqData: {
     title: "Frequently Asked Questions",
+    src:"/images/gallery/wed1.jpg",
     items: [
       {
         question: "What types of wedding functions can be hosted at Corbett The Grand?",
