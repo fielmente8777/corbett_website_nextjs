@@ -72,7 +72,31 @@
   }
 
 
+// custom button styles for slider buttons
+.room-card {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 
+    background-color: #fff;
+    box-shadow: 0 7px 29px 0 rgba(100, 100, 111, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    svg {
+      color: #1f1f1f;
+      width: 20px;
+      height: 20px;
+    }
+    @media (width < 768px) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
 
 
 .gallery-banner {
