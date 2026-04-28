@@ -17,7 +17,10 @@ const RoomsCard: React.FC<RoomsTypesProps["rooms"][0] & { index: number }> = ({
   rating,
 }) => {
   return (
-    <div className="w-full grid md:grid-cols-8 grid-cols-1 gap-6 items-center">
+    <div
+      className="w-full grid md:grid-cols-8 grid-cols-1 gap-6 items-center"
+      id={name.replace(" ", "-").toLowerCase()}
+    >
       <div
         className={`md:col-span-5 md:block hidden ${index % 2 === 0 ? "" : "md:order-2"} room-card`}
       >
