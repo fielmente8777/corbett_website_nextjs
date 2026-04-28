@@ -7,7 +7,7 @@ export default function AccommodationPage() {
   return (
     <main>
       <TextBanner {...roomsPageData.bannerData} />
-      <SectionWithContainer containerClassName="md:space-y-[40px]">
+      <SectionWithContainer containerClassName="md:space-y-[40px] space-y-8">
         {roomsPageData.rooms.map((room, index) => (
           <RoomsCard key={index} {...room} index={index} />
         ))}

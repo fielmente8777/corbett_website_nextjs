@@ -19,7 +19,7 @@ const RoomsCard: React.FC<RoomsTypesProps["rooms"][0] & { index: number }> = ({
   return (
     <div className="w-full grid md:grid-cols-8 grid-cols-1 gap-6 items-center">
       <div
-        className={`md:col-span-5 ${index % 2 === 0 ? "" : "md:order-2"} room-card`}
+        className={`md:col-span-5 md:block hidden ${index % 2 === 0 ? "" : "md:order-2"} room-card`}
       >
         <SwiperCarousel
           data={images}
@@ -48,7 +48,7 @@ const RoomsCard: React.FC<RoomsTypesProps["rooms"][0] & { index: number }> = ({
         />
       </div>
       <div
-        className={`md:col-span-3 lg:px-6 lg:py-8 border border-secondary box-shadow rounded-3xl bg-background overflow-hidden flex flex-col gap-4 ${index % 2 === 0 ? "" : "md:order-1"}`}
+        className={`md:col-span-3 lg:px-6 lg:py-8 py-6 px-4 border border-secondary box-shadow rounded-3xl bg-background overflow-hidden flex flex-col gap-4 ${index % 2 === 0 ? "" : "md:order-1"}`}
       >
         <div className="flex items-center justify-between gap-2">
           {/* room name */}
@@ -75,6 +75,34 @@ const RoomsCard: React.FC<RoomsTypesProps["rooms"][0] & { index: number }> = ({
             <span>★</span>
             {rating}
           </p>
+        </div>
+
+        <div className="w-full md:hidden block room-card">
+          <SwiperCarousel
+            data={images}
+            slidesPerView={1}
+            spaceBetween={16}
+            modules={[Navigation, FreeMode]}
+            freeMode={true}
+            autoplay={{
+              delay: 100,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: false,
+            }}
+            loop
+            navigation={true}
+            className="w-full"
+            renderSlide={(src) => (
+              <div className="w-full relative md:aspect-4/2.75 aspect-4/3">
+                <Image
+                  src={src}
+                  alt="Image"
+                  fill
+                  className="object-cover rounded-2xl"
+                />
+              </div>
+            )}
+          />
         </div>
         <p className="md:text-[1.063rem] text-light">{description}</p>
         <ul className="grid md:grid-cols-2 bg-white grid-cols-1 gap-4 border border-secondary rounded-2xl p-4">

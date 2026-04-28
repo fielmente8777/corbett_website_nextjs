@@ -9,22 +9,20 @@ export default function ContactPage() {
     <main>
       {/* TOP SECTION */}
 
-      <SectionWithContainer sectionClassName="bg-[var(--color-secondary)]">
-        <div className="max_width">
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            {/* LEFT — Info */}
-            <div className="flex items-center py-16 pr-10">
-              <ContactInfo
-                visitData={contactPageData.visitData}
-                reservationsData={contactPageData.reservationsData}
-              />
-            </div>
+      <SectionWithContainer sectionClassName="bg-secondary">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {/* LEFT — Info */}
+          <div className="flex items-center">
+            <ContactInfo
+              visitData={contactPageData.visitData}
+              reservationsData={contactPageData.reservationsData}
+            />
+          </div>
 
-            {/* RIGHT — Form with left border */}
-            <div className="flex items-center justify-center py-16 pl-10 border-l border-[var(--color-secondary)]">
-              <div className="w-full max-w-md">
-                <ContactForm enquiryForm={contactPageData.enquiryForm} />
-              </div>
+          {/* RIGHT — Form with left border */}
+          <div className="flex md:items-end md:justify-end">
+            <div className="w-full lg:max-w-lg">
+              <ContactForm enquiryForm={contactPageData.enquiryForm} />
             </div>
           </div>
         </div>

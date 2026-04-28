@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ReactNode } from "react";
 
 type VisitData = {
@@ -7,6 +8,8 @@ type VisitData = {
     prefix: string;
     label: string;
     href: string;
+    label2?: string;
+    href2?: string;
     icon: React.ElementType;
   }[];
 };
@@ -21,30 +24,43 @@ type Props = {
   reservationsData: ReservationsData;
 };
 
-export default function ContactInfo({ visitData, reservationsData }: Props) {
+export default function ContactInfo({ visitData }: Props) {
   return (
     <div className="flex flex-col gap-6">
-
       {/* Title */}
       <div className="flex flex-col gap-2">
-        <h2 className="font-primary text-3xl font-semibold text-white uppercase tracking-widest">
+        <h2 className="font-primary text-3xl md:text-4xl font-semibold text-white uppercase tracking-widest">
           {visitData.title}
         </h2>
-        <p className="text-sm text-white/70">{visitData.subtitle}</p>
+        <p className="md:text-lg text-white/70">{visitData.subtitle}</p>
       </div>
 
       {/* Contact Links */}
-      <ul className="flex flex-col gap-4">
+      <ul className="flex flex-col gap-3">
         {visitData.links.map((item, i) => (
-          <li key={i} className="flex flex-col gap-0.5 text-sm text-white/90 leading-relaxed">
+          <li key={i} className="flex flex-wrap gap-2 md:text-lg text-white/90">
             <span className="font-semibold text-white">{item.prefix}</span>
-            <a href={item.href} className="text-white/75 hover:text-white transition-colors">
+            <Link
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/75 hover:text-white transition-colors"
+            >
               {item.label}
-            </a>
+            </Link>
+            {item.label2 && (
+              <>
+                <Link
+                  href={item.href2 || "#"}
+                  className="text-white/75 hover:text-white transition-colors"
+                >
+                  {item.label2}
+                </Link>
+              </>
+            )}
           </li>
         ))}
       </ul>
-
     </div>
   );
 }

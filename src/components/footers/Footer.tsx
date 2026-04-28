@@ -5,7 +5,7 @@ const Footer = () => {
   const pathName = usePathname();
   const RenderFooter = WebSiteFooter;
   switch (pathName) {
-    case "/thank-you/":
+    case "/thank-you":
       return null;
 
     default:

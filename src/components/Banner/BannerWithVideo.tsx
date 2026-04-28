@@ -144,7 +144,7 @@ const BannerWithVideo: React.FC<BannerWithVideoProps> = ({
             </Link>
 
             {/* Social Links */}
-            <ul className="md:flex hidden flex-col bg-white items-center gap-2 px-2 py-4 absolute top-1/2 -translate-y-1/2 rounded-l-2xl right-0 z-20">
+            <ul className="md:flex hidden flex-col bg-white items-center  gap-4 px-2 py-3 absolute top-1/2 -translate-y-1/2 rounded-l-2xl right-0 z-20">
               {SocialLinks.map((item, index) => (
                 <li key={index}>
                   <Link
@@ -152,7 +152,7 @@ const BannerWithVideo: React.FC<BannerWithVideoProps> = ({
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={item.label}
-                    className="p-1"
+                    className="flex items-center justify-center w-8 aspect-square"
                   >
                     {item.icon}
                   </Link>

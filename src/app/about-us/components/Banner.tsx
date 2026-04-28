@@ -5,6 +5,7 @@ import {
 } from "@/components/sectionComponants";
 import Image from "next/image";
 import Section from "../../../components/sectionComponants/Section";
+import WeddingImagesSlider from "@/app/weddings/components/WeddingImagesSlider";
 
 const Banner: React.FC<AboutUsBannerProps> = ({
   title,
@@ -20,10 +21,11 @@ const Banner: React.FC<AboutUsBannerProps> = ({
           <h1 className="xl:text-7xl md:text-4xl text-3xl font-primary text-primary">
             {subtitle}
           </h1>
+          <WeddingImagesSlider images={images} classname="md:hidden" />
           <p className="text-light lg:text-lg">{description}</p>
         </div>
       </Container>
-      <div className="grid grid-cols-5 gap-2">
+      <div className="md:grid hidden grid-cols-5 gap-2">
         {images?.map((src, index) => (
           <div
             className="flex items-center justify-center w-full h-full"

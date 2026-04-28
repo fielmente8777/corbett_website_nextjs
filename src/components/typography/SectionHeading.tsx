@@ -60,7 +60,7 @@ const SectionHeading: React.FC<SectionHeadingDescProps> = ({
                 smTextCenter ? "max-md:text-center" : ""
               } ${
                 titleColor ? `text-${titleColor}` : "text-primary"
-              } md:text-4xl/tight text-[2rem] font-primary uppercase ${fontPrimary ? "primary-font" : "secondary-font"}`}
+              } md:text-4xl/tight text-3xl font-primary uppercase ${fontPrimary ? "primary-font" : "secondary-font"}`}
             />
           )}
           {logo && (

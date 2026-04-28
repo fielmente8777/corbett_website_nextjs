@@ -1,6 +1,6 @@
 import { SocialLinks } from "@/components/footers/footerData";
 import { contacts } from "@/utils/constant";
-import { SpaIcon } from "@/utils/experiences";
+import { AdventureActivitiesIcon, BoatingIcon, ConferenceHallIcon, DiscothequeIcon, IndoorKidPlayZoneIcon, JacuzziIcon, MiniTheatreIcon, OutdoorKidsZoneIcon, PartyLawnsIcon, RainDanceIcon, SpaIcon, SwimmingPoolIcon } from "@/utils/experiences";
 
 export const homePageData = {
   bannerData: {
@@ -9,8 +9,9 @@ export const homePageData = {
     description:
       "Immerse yourself in refined comfort, surrounded by the untamed beauty of Corbett.",
     SocialLinks,
-    images: ["/home/bnr.png", "/home/bnr.png"],
-    video:"https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/corbatt-the-grand/Property+Full+Video+(1).mp4",
+    images: ["/home/bnr.png"],
+    video:
+      "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/corbatt-the-grand/Property+Full+Video+(1).mp4",
     actions: [
       { label: "PLAY VIDEO", href: "#" },
       { label: "ABOUT US", href: "/about-us" },
@@ -31,7 +32,7 @@ export const homePageData = {
     ],
     image: "/home/intro-1.png",
     video: {
-      src: "/home/intro-video.mp4",
+      src: "/resort-video.mp4",
       poster: "/home/intro-2.png",
     },
     link: {
@@ -56,14 +57,114 @@ export const homePageData = {
         title: "SPA",
         description:
           "Relax and rejuvenate with holistic wellness treatments designed to soothe your body and mind in a serene forest setting.",
-        images: ["/home/img1.png", "/home/img2.png"],
+        images: ["/home/resort-exp/spa-1.png", "/home/img2.png"],
       },
       {
-        icon: <SpaIcon />,
-        title: "SPA",
+        icon: <DiscothequeIcon />,
+        images: [
+          "/home/resort-exp/discotheque-1.png",
+          "/home/resort-exp/discotheque-2.png",
+        ],
+        title: "Discotheque",
         description:
-          "Relax and rejuvenate with holistic wellness treatments designed to soothe your body and mind in a serene forest setting.",
-        images: ["/home/img2.png", "/home/img1.png"],
+          "Dance the night away with vibrant music, dazzling lights, and a lively atmosphere at our in-house discotheque.",
+      },
+      {
+        icon: <AdventureActivitiesIcon />,
+        images: [
+          "/home/resort-exp/adventure-activites-1.png",
+          "/home/resort-exp/adventure-activites-2.png",
+        ],
+        title: "Adventure Activities",
+        description:
+          "Experience thrilling outdoor adventures including trekking, rope activities, ziplining, and more—perfect for adrenaline seekers..",
+      },
+      {
+        icon: <BoatingIcon />,
+        images: [
+          "/home/resort-exp/boating-1.png",
+          "/home/resort-exp/boating-2.png",
+        ],
+        title: "Boating",
+        description:
+          "Enjoy peaceful moments on water with scenic boat rides, surrounded by natural beauty.",
+      },
+      {
+        icon: <JacuzziIcon />,
+        images: [
+          "/home/resort-exp/jacuzzi-1.png",
+          "/home/resort-exp/jacuzzi-2.png",
+        ],
+        title: "Jacuzzi",
+        description:
+          "Unwind in a warm, bubbling Jacuzzi—perfect for post-safari relaxation and soothing tired muscles.",
+      },
+      {
+        icon: <OutdoorKidsZoneIcon />,
+        images: [
+          "/home/resort-exp/outdoor-kids-zone-1.png",
+          "/home/resort-exp/outdoor-kids-zone-2.png",
+        ],
+        title: "Outdoor Kids Zone",
+        description:
+          "Let your children play freely in our safe and fun-filled outdoor area with slides, swings, and games.",
+      },
+      {
+        icon: <RainDanceIcon />,
+        images: [
+          "/home/resort-exp/rain-dance-1.png",
+          "/home/resort-exp/rain-dance-2.png",
+        ],
+        title: "Rain Dance",
+        description:
+          "Groove to upbeat music under artificial rain showers for a splash of fun and excitement.",
+      },
+      {
+        icon: <IndoorKidPlayZoneIcon />,
+        images: [
+          "/home/resort-exp/indoor-play-zone-1.png",
+          "/home/resort-exp/indoor-play-zone-2.png",
+        ],
+        title: "Indoor Kid Play Zone",
+        description:
+          "A vibrant indoor space packed with toys, games, and soft play zones to keep your little ones happily engaged.",
+      },
+      {
+        icon: <PartyLawnsIcon />,
+        images: [
+          "/home/resort-exp/party-lawns-1.png",
+          "/home/resort-exp/party-lawns-2.png",
+        ],
+        title: "Party Lawns",
+        description:
+          "Spacious, green lawns ideal for weddings, private events, and outdoor celebrations amidst nature.",
+      },
+      {
+        icon: <ConferenceHallIcon />,
+        images: [
+          "/home/resort-exp/conference-hall-1.png",
+          "/home/resort-exp/conference-hall-2.png",
+        ],
+        title: "Conference Hall",
+        description:
+          "Modern and well-equipped conference hall, perfect for business meetings, workshops, and corporate retreats.",
+      },
+      {
+        icon: <MiniTheatreIcon />,
+        images: [
+          "/home/resort-exp/mini-theatre-1.png",
+          "/home/resort-exp/mini-theatre-2.png",
+        ],
+        title: "Mini Theatre",
+        description:
+          "Enjoy movies or private screenings in our cozy mini theatre equipped with modern audio-visual systems.",
+      },
+      {
+        icon: <SwimmingPoolIcon />,
+        images: ["/home/resort-exp/pool-1.png", "/home/resort-exp/pool-2.png"],
+        title: "Swimming Pool",
+        description:
+          "Take a refreshing dip or relax by the poolside with scenic views and peaceful ambiance.",
       },
     ],
     link: {
@@ -71,6 +172,7 @@ export const homePageData = {
       href: "/contact",
     },
   },
+
   wedding: {
     link: {
       label: "Explore Weddings",

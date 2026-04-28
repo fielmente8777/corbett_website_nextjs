@@ -4,7 +4,7 @@ Kindly share details on room options, amenities, and availability for my travel 
 Looking forward to your response.`;
 
 export const contacts = {
-  email: ["reservations@corbetthegrand.com"],
+  email: ["reservations@corbetthegrand.com", "info@corbettthegrand.com"],
   phone: ["+91 89589 88800", "+91 98710 10068"],
   WhatsAppCta:
     "https://wa.me/+918958988800?text=" + encodeURIComponent(embededtext),
@@ -23,6 +23,6 @@ export const contacts = {
     linkedin: "https://www.linkedin.com",
     twitter: "https://x.com/corbettgrand",
   },
-  formDomain: "sumittest11157821",
-  // formDomain: "",
+  // formDomain: "sumittest11157821",
+  formDomain: "corbettthegrand",
 };

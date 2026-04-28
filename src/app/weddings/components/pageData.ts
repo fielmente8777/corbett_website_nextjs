@@ -1,8 +1,8 @@
 export const weddingPageData = {
   banner: {
     video: {
-      src: "/wedding/video.mp4",
-      poster: "/wedding/banner.png",
+      src: "/wedding_hero.mp4",
+      poster: "/wedding_hero.png",
     },
   },
 
@@ -13,7 +13,7 @@ export const weddingPageData = {
     ],
     image: "/wedding/intro-1.png",
     video: {
-      src: "/wedding/video.mp4",
+      src: "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/corbatt-the-grand/Haldi-Reel-Corbett-grand.mp4",
       poster: "/wedding/poster.png",
     },
     link: {
@@ -35,6 +35,7 @@ export const weddingPageData = {
     title: "The perfect choice for your destination wedding",
     description: [
       "At Corbett The Grand, each venue is infused with natural charm and elegance. With inbuilt modern technology, the latest theme-based décor, professional and friendly service, and abundant free parking available on site, Corbett The Grand stands out as one of the most preferred and popular choices for large ceremonies across the entire Corbett region.",
+      "Corbett The Grand caters to a wide range of functions and events—be it a gala dinner, intimate gathering, wedding, or anniversary. The largest pillar-less hall, spanning 4,200 sq. ft., can comfortably accommodate up to 350 guests and features a dedicated stage and dance floor. Our beautifully landscaped gardens provide the perfect setting for Mehendi, Sagan ceremonies, and grand receptions."
     ],
     images: ["/wedding/venue-1.png", "/wedding/venue-2.png"],
     link: {

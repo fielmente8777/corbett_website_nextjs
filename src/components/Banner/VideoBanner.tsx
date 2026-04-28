@@ -10,8 +10,8 @@ interface Props {
 
 const VideoBanner: React.FC<Props> = ({ video }) => {
   return (
-    <Section defaultPadding={false} className="px-6 ">
-      <div className="overflow-hidden rounded-4xl aspect-4/1.75">
+    <Section defaultPadding={false} className="lg:px-6 px-4">
+      <div className="overflow-hidden rounded-4xl md:aspect-4/1.75 aspect-4/4.25">
         <LazyLoadedVideo
           src={video.src}
           poster={video.poster}

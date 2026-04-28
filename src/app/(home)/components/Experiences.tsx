@@ -48,7 +48,7 @@ const Experiences: React.FC<ExperiencesProps> = ({ title, items, link }) => {
                   titleClassName="max-md:text-3xl"
                   wrapperClassName="md:max-w-[300px]"
                 />
-                <div className="lg:hidden block">
+                <div className="lg:hidden block w-full">
                   <ImageSlider images={item.images} />
                 </div>
                 <div className="flex flex-col gap-4">
@@ -86,7 +86,7 @@ const Experiences: React.FC<ExperiencesProps> = ({ title, items, link }) => {
                   />
                 </div>
               </div>
-              <div className="absolute lg:right-0.5 lg:w-[63%] max-lg:inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-between z-20">
+              <div className="absolute lg:right-0.5 lg:w-[63%] max-lg:inset-x-0 lg:top-1/2 lg:-translate-y-1/2 top-[70%] translate-y-[-70%] flex items-center justify-between z-20">
                 <button className="exp-prev w-10 aspect-square rounded-full flex items-center justify-center box-shadow bg-white cursor-pointer">
                   <BtnPrev />
                 </button>

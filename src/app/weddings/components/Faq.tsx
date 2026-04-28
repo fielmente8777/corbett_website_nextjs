@@ -8,7 +8,7 @@ const Faq: React.FC<FaqProps> = ({ title, items, img }) => {
   return (
     <SectionWithContainer>
       <div className="grid lg:grid-cols-2 grid-cols-1 items-center gap-6 ">
-        <div className="relative w-full aspect-4/4.75 overflow-hidden rounded-3xl">
+        <div className="relative lg:block hidden w-full aspect-4/4.75 overflow-hidden rounded-3xl">
           <Image
             src={img}
             alt={title}
@@ -19,6 +19,15 @@ const Faq: React.FC<FaqProps> = ({ title, items, img }) => {
         </div>
         <div className="flex flex-col gap-6">
           <SectionHeading title={title} />
+          <div className="relative lg:hidden block w-full aspect-4/4.75 overflow-hidden rounded-3xl">
+          <Image
+            src={img}
+            alt={title}
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
           <div className="">
             {items.map((item, index) => (
               <Accordion key={index} {...item} index={index} />

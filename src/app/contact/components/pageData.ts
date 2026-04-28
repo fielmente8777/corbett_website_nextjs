@@ -1,5 +1,5 @@
-import {contacts} from "@/utils/constant";
-import { CallIcon, LocationIcon,MailIcon } from "@/utils/icons";
+import { contacts } from "@/utils/constant";
+import { CallIcon, LocationIcon, MailIcon } from "@/utils/icons";
 export const contactPageData = {
   visitData: {
     title: "GET IN TOUCH!",
@@ -7,19 +7,24 @@ export const contactPageData = {
     links: [
       {
         prefix: "Call Us:",
-        label: "+91 89589 88800, +91 98710 10068",
-        href: "tel:+918958988800",
+        label: contacts.phone[0],
+        href: "tel:" + contacts.phone[0],
+        label2: contacts.phone[1],
+        href2: "tel:" + contacts.phone[1],
         icon: CallIcon,
       },
       {
         prefix: "Email:",
-        label: "reservations@corbettthegrand.com, info@corbettthegrand.com",
-        href: "mailto:reservations@corbettthegrand.com",
+        label: contacts.email[0],
+        href: "mailto:" + contacts.email[0],
+        label2: contacts.email[1],
+        href2: "mailto:" + contacts.email[1],
         icon: MailIcon,
       },
       {
         prefix: "Address:",
-        label: "818, 8th floor, Jaina Tower-1, District Centre, Janakpuri, West Delhi, India",
+        label:
+          "818, 8th floor, Jaina Tower-1, District Centre, Janakpuri, West Delhi, India",
         href: "#",
         icon: LocationIcon,
       },

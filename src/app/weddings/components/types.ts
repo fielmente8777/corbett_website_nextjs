@@ -12,3 +12,14 @@ export interface FaqProps {
     answer: string;
   }[];
 }
+
+
+export interface VenueProps {
+  title: string;
+  description: string[];
+  images: string[];
+  link: {
+    label: string;
+    href: string;
+  };
+}

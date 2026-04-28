@@ -11,23 +11,15 @@ type Props = {
 export default function ContactForm({ enquiryForm }: Props) {
   return (
     <div className="bg-white p-5 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.2)] flex flex-col gap-4">
-
       {/* Form Header */}
       <div className="flex flex-col gap-1">
-        <h2 className="font-primary text-base text-[#2C1810] uppercase tracking-widest">
+        <h2 className="font-primary md:text-3xl text-2xl text-primary uppercase tracking-widest">
           {enquiryForm.title}
         </h2>
-        <p className="text-xs text-[#686868]">{enquiryForm.subtitle}</p>
+        <p className="md:text-lg text-light">{enquiryForm.subtitle}</p>
       </div>
 
       <Form1 />
-      <button
-        type="submit"
-        form="contact-form"
-        className="w-full py-2.5 bg-[var(--color-secondary)] text-white text-sm uppercase tracking-widest rounded-md hover:opacity-90 transition-opacity cursor-pointer"
-      >
-        Submit
-      </button>
     </div>
   );
 }

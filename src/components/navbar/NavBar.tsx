@@ -1,14 +1,23 @@
 "use client";
-import { usePathname } from "next/navigation";
-import { navData } from "./navData";
-import Link from "next/link";
+import { useWebContext } from "@/context-api/WebContext";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { IoMdMenu } from "react-icons/io";
 import { CtaBtn } from "../buttons/CtaBtn";
-
+import { navData } from "./navData";
+import MobileNav from "./MobileNav";
 const NavBar = () => {
+  const { setIsMobileNavOpen } = useWebContext();
   const pathName = usePathname();
+  if (pathName === "/thank-you") {
+    return null;
+  }
+
   return (
-    <header className={`max_screen_width  ${pathName === "/about-us" ? "border-b border-secondary" : ""}`}>
+    <header
+      className={`max_screen_width  ${pathName === "/about-us" ? "border-b border-secondary" : ""}`}
+    >
       <nav className="flex items-center justify-between py-4 max_width">
         <Link href="/" className="block relative md:w-50 w-40  aspect-4/1.25">
           <Image src={navData.logo} alt="logo" fill className="object-cover" />
@@ -39,7 +48,12 @@ const NavBar = () => {
           startIcon="Booking"
           startIconClass="text-secondary! group-hover:text-white!"
         />
+        <button className="lg:hidden" onClick={() => setIsMobileNavOpen(true)}>
+          <IoMdMenu className="text-3xl" />
+          <span className="sr-only">menu</span>
+        </button>
       </nav>
+      <MobileNav />
     </header>
   );
 };

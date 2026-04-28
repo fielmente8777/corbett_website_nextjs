@@ -2,6 +2,8 @@
 import { createContext, useContext, useState } from "react";
 
 interface WebContextProps {
+  isMobileNavOpen: boolean;
+  setIsMobileNavOpen: React.Dispatch<React.SetStateAction<boolean>>;
   imgCurrentIndex: number;
   imageArray: string[];
   isOpenPillarPopup: boolean;
@@ -37,6 +39,8 @@ export const WebContext = createContext<WebContextProps>({
   handleImagePopup: () => {},
   isOpenPopupForm: false,
   setIsOpenPopupForm: () => {},
+  isMobileNavOpen: false,
+  setIsMobileNavOpen: () => {},
 });
 
 interface WebProviderProps {
@@ -54,6 +58,7 @@ export const WebProvider: React.FC<WebProviderProps> = ({ children }) => {
   const [imageArray, setImageArray] = useState<string[]>([]);
   const [isOpenImagePopup, setIsOpenImagePopup] = useState(false);
   const [isOpenPopUpForm2, setIsOpenPopUpForm2] = useState(false);
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   // image popup handler
   const handleImagePopup = (index: number, imageArray: string[]) => {
@@ -63,6 +68,8 @@ export const WebProvider: React.FC<WebProviderProps> = ({ children }) => {
   };
 
   const value = {
+    isMobileNavOpen,
+    setIsMobileNavOpen,
     isOpenPopUpForm2,
     setIsOpenPopUpForm2,
     imageArray,
