@@ -57,7 +57,7 @@ export const homePageData = {
         title: "SPA",
         description:
           "Relax and rejuvenate with holistic wellness treatments designed to soothe your body and mind in a serene forest setting.",
-        images: ["/home/resort-exp/spa-1.png", "/home/img2.webp"],
+        images: ["/home/resort-exp/spa-1.png", "/home/Img2.webp"],
       },
       {
         icon: <DiscothequeIcon />,
