@@ -131,11 +131,10 @@ export const webSiteFooterData: WebSiteFooterData = {
       links: [
         {
           icon: <LocationIcon />,
-          label: "Address: " + contacts.addresses[0].address,
+          label:  contacts.addresses[0].address,
           href: contacts.addresses[0].addressUrl,
         },
         {
-          title: "call: ",
           icon: <CallIcon />,
           label: contacts.phone[0],
           href: "tel:" + contacts.phone[0],
@@ -143,7 +142,6 @@ export const webSiteFooterData: WebSiteFooterData = {
           href2: "tel:" + contacts.phone[1],
         },
         {
-          title: "Email: ",
           icon: <MailIcon />,
           label: contacts.email[0],
           href: "mailto:" + contacts.email[0],

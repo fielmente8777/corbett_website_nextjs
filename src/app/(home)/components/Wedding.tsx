@@ -12,8 +12,8 @@ interface WeddingProps {
 
 const Wedding: React.FC<WeddingProps> = ({ link, images }) => {
   return (
-    <Section className="px-4">
-      <div className="overflow-hidden relative rounded-4xl aspect-[4/1.9]">
+    <Section className="md:px-4">
+      <div className="overflow-hidden relative rounded-4xl md:aspect-[4/1.9] aspect-square">
         <Image
           src={images[1]}
           alt="Wedding"
@@ -37,7 +37,7 @@ const Wedding: React.FC<WeddingProps> = ({ link, images }) => {
               label={link.label}
               icon="arrow"
               iconClass="bg-transparent! text-white"
-              className="absolute bottom-56 left-1/2 -translate-x-1/2 text-white rounded-lg"
+              className="absolute lg:bottom-56 bottom-6 w-fit! left-1/2 -translate-x-1/2 text-white rounded-lg"
             />
           </div>
         </div>

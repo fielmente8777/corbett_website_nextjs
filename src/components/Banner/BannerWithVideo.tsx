@@ -39,8 +39,8 @@ const BannerWithVideo: React.FC<BannerWithVideoProps> = ({
   // }, [isVideoOpen]);
 
   return (
-    <Section defaultPadding={false} className="px-6">
-      <div className="relative w-full lg:aspect-[4/1.74] aspect-4/5 rounded-4xl overflow-hidden">
+    <Section defaultPadding={false} className="md:px-6 px-4">
+      <div className="relative w-full lg:aspect-[4/1.74] aspect-4/6 rounded-4xl overflow-hidden">
 
         {/* ---------------- Swiper ---------------- */}
         <SwiperCarousel
@@ -86,8 +86,8 @@ const BannerWithVideo: React.FC<BannerWithVideoProps> = ({
         {!isVideoOpen && (
           <>
             {/* Center Content */}
-            <div className="absolute inset-0 z-10 flex items-center justify-center">
-              <div className="max-w-4xl w-full relative after:absolute after:bg-white/5 after:inset-x-0 after:-inset-y-4 after:-z-10 after:rounded-full after:backdrop-blur-[2px]">
+            <div className="absolute inset-0 z-10 flex items-center justify-center max-sm:px-3">
+              <div className="max-w-4xl w-full relative after:absolute after:bg-white/5 after:inset-x-0 after:-inset-y-4 after:-z-10 md:after:rounded-full after:rounded-2xl after:backdrop-blur-[2px]">
                 <h1 className="text-4xl md:text-7xl font-primary text-center text-white">
                   {title}
                   {subtitle && <span className="block">{subtitle}</span>}
@@ -97,7 +97,7 @@ const BannerWithVideo: React.FC<BannerWithVideoProps> = ({
                   {description}
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 mt-4 max-w-90 mx-auto gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 mt-4 md:max-w-90 max-w-fit mx-auto gap-4">
 
                   {/* PLAY VIDEO BUTTON */}
                   <button
@@ -122,7 +122,7 @@ const BannerWithVideo: React.FC<BannerWithVideoProps> = ({
             {/* Scroll */}
             <Link
               href="#explore"
-              className="absolute bottom-6 text-white left-1/2 -translate-x-1/2 z-20"
+              className="absolute lg:block hidden bottom-6 text-white left-1/2 -translate-x-1/2 z-20"
             >
               <span className="flex flex-col items-center gap-2">
                 <span className="animate-bounce">
@@ -138,13 +138,13 @@ const BannerWithVideo: React.FC<BannerWithVideoProps> = ({
               target="_blank"
               rel="noreferrer"
               style={{ writingMode: "vertical-lr" }}
-              className="absolute top-1/2 -translate-y-1/2 left-0 z-20 rotate-180 py-2 px-3 rounded-l-2xl bg-white"
+              className="absolute md:block hidden top-1/2 -translate-y-1/2 left-0 z-20 rotate-180 py-2 px-3 rounded-l-2xl bg-white"
             >
               {actions[2].label}
             </Link>
 
             {/* Social Links */}
-            <ul className="flex flex-col bg-white items-center gap-2 px-2 py-4 absolute top-1/2 -translate-y-1/2 rounded-l-2xl right-0 z-20">
+            <ul className="md:flex hidden flex-col bg-white items-center gap-2 px-2 py-4 absolute top-1/2 -translate-y-1/2 rounded-l-2xl right-0 z-20">
               {SocialLinks.map((item, index) => (
                 <li key={index}>
                   <Link

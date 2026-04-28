@@ -1,4 +1,5 @@
 "use client";
+import ImageSlider from "@/components/Banner/ImageSlider";
 import LinkButton from "@/components/buttons/LinkButton";
 import { SectionWithContainer } from "@/components/sectionComponants";
 import SwiperCarousel from "@/components/slider/SwiperCarousel";
@@ -44,8 +45,12 @@ const Experiences: React.FC<ExperiencesProps> = ({ title, items, link }) => {
                 <SectionHeading
                   title={title}
                   textCenter
-                  wrapperClassName="max-w-[300px]"
+                  titleClassName="max-md:text-3xl"
+                  wrapperClassName="md:max-w-[300px]"
                 />
+                <div className="lg:hidden block">
+                  <ImageSlider images={item.images} />
+                </div>
                 <div className="flex flex-col gap-4">
                   <div className="flex flex-col items-center justify-center gap-4">
                     <div className="">{item.icon}</div>
@@ -56,12 +61,12 @@ const Experiences: React.FC<ExperiencesProps> = ({ title, items, link }) => {
                     <LinkButton
                       label={link.label}
                       href={link.href}
-                      className="w-fit text-secondary rounded-lg"
+                      className="w-fit! text-secondary rounded-lg "
                     />
                   </div>
                 </div>
               </div>
-              <div className="grid grid-cols-[1.2fr_1fr] gap-6">
+              <div className="lg:grid hidden grid-cols-[1.2fr_1fr] gap-6">
                 <div className="relative w-full aspect-4/5.75 overflow-hidden rounded-t-full">
                   <Image
                     src={item.images[0]}
@@ -81,7 +86,7 @@ const Experiences: React.FC<ExperiencesProps> = ({ title, items, link }) => {
                   />
                 </div>
               </div>
-              <div className="absolute right-0.5 w-[63%] top-1/2 -translate-y-1/2 flex items-center justify-between z-20">
+              <div className="absolute lg:right-0.5 lg:w-[63%] max-lg:inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-between z-20">
                 <button className="exp-prev w-10 aspect-square rounded-full flex items-center justify-center box-shadow bg-white cursor-pointer">
                   <BtnPrev />
                 </button>

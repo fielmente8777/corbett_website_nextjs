@@ -18,7 +18,7 @@ const ImageSlider: React.FC<{ images: string[] }> = ({ images }) => {
         speed={900}
         className="w-full h-full    aspect-auto"
         renderSlide={(src) => (
-          <div className="relative w-full h-full aspect-auto">
+          <div className="relative w-full aspect-4/4.25">
             <Image src={src} alt="" fill className="object-cover" />
           </div>
         )}
