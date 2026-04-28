@@ -1,5 +1,6 @@
 import { SocialLinks } from "@/components/footers/footerData";
 import { contacts } from "@/utils/constant";
+import { SpaIcon } from "@/utils/experiences";
 
 export const homePageData = {
   bannerData: {
@@ -8,8 +9,8 @@ export const homePageData = {
     description:
       "Immerse yourself in refined comfort, surrounded by the untamed beauty of Corbett.",
     SocialLinks,
-    images: ["/home/bnr.png"],
-    video:"",
+    images: ["/home/bnr.png", "/home/bnr.png"],
+    video:"https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/corbatt-the-grand/Property+Full+Video+(1).mp4",
     actions: [
       { label: "PLAY VIDEO", href: "#" },
       { label: "ABOUT US", href: "/about-us" },
@@ -47,14 +48,22 @@ export const homePageData = {
     ],
   },
 
-  amenitiesData: {
-    title: "Hotel Amenities",
+  experiencesData: {
+    title: "Resort Experiences",
     items: [
       {
+        icon: <SpaIcon />,
         title: "SPA",
         description:
           "Relax and rejuvenate with holistic wellness treatments designed to soothe your body and mind in a serene forest setting.",
-        images: ["/home/spa.webp"],
+        images: ["/home/img1.png", "/home/img2.png"],
+      },
+      {
+        icon: <SpaIcon />,
+        title: "SPA",
+        description:
+          "Relax and rejuvenate with holistic wellness treatments designed to soothe your body and mind in a serene forest setting.",
+        images: ["/home/img2.png", "/home/img1.png"],
       },
     ],
     link: {

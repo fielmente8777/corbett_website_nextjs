@@ -13,7 +13,7 @@ const Intro: React.FC<introProps> = ({
   link,
 }) => {
   return (
-    <SectionWithContainer>
+    <SectionWithContainer sectionId="explore">
       <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] items-center gap-8">
         <div className="w-full relative aspect-4/3.25">
           <div className="relative w-full max-w-[75%] aspect-4/3.5 rounded-3xl overflow-hidden">

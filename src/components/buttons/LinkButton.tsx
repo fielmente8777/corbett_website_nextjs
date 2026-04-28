@@ -19,9 +19,9 @@ const LinkButton: React.FC<LinkButtonProps> = ({
       className={`transition-all max-md:w-full flex items-center gap-2 justify-center font-medium border duration-300 ease-in-out hover:scale-x-105 active:scale-95 hover:shadow-2xl px-6 py-3  ${className}`}
     >
       {label}
-      <span className="w-6 aspect-square flex items-center justify-center bg-white rounded-full text-primary">
+      {/* <span className="w-6 aspect-square flex items-center justify-center bg-white rounded-full text-primary"> */}
         <ICon />
-      </span>
+      {/* </span> */}
     </Link>
   );
 };

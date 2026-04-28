@@ -3,12 +3,13 @@
 import { ReactNode } from "react";
 import { Swiper, SwiperProps, SwiperSlide } from "swiper/react";
 
-// @import swiperr css
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/effect-fade";
+
 
 interface SwiperCaroselProps<T> extends SwiperProps {
   data: T[];

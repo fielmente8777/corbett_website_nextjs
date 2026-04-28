@@ -5,7 +5,7 @@
   --color-primary: #171717;
   --color-secondary: #7B584F;
   --color-light: #686868;
-  --color-dark:#343434;
+  --color-dark: #343434;
   --color-background: #FCFCF9;
 }
 
@@ -13,7 +13,7 @@
   --color-primary: #171717;
   --color-secondary: #7B584F;
   --color-light: #686868;
-  --color-dark:#343434;
+  --color-dark: #343434;
   --color-background: #FCFCF9;
   --font-primary: var(--font-aboreto);
   --font-body: var(--font-montserrat);
@@ -22,11 +22,16 @@
 
 body {
   font-family: var(--font-body);
-  background-color: var(--color-background);
+  scroll-behavior: smooth;
 }
 
 .font-primary {
   font-family: var(--font-primary);
+}
+
+a,
+button {
+  cursor: pointer;
 }
 
 
@@ -46,9 +51,9 @@ body {
 
 
 .gallery-banner {
-  background: var(--color-secondary); 
+  background: var(--color-secondary);
   padding: 40px 0;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,8 +70,9 @@ body {
   margin: 0;
 }
 
-.gallery-banner h2::before, .gallery-banner h2::after {
-  display: none !important; 
+.gallery-banner h2::before,
+.gallery-banner h2::after {
+  display: none !important;
 }
 
 
@@ -83,11 +89,11 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 24px; 
-       
-   
-  border: 1px solid #ccc; 
-  border-radius: 24px;   
+  padding: 8px 24px;
+
+
+  border: 1px solid #ccc;
+  border-radius: 24px;
   font-size: 14px;
   background-color: white;
   cursor: pointer;
@@ -96,7 +102,7 @@ body {
 }
 
 .gallery-tabs button.active {
-  background: var(--color-secondary); 
+  background: var(--color-secondary);
   color: white;
   border-color: var(--color-secondary);
 }
@@ -118,14 +124,14 @@ body {
 }
 
 .contact-section {
-  background: var(--color-secondary); 
+  background: var(--color-secondary);
   padding: 80px 0;
   color: white;
 }
 
 .contact-top {
   display: grid;
-  grid-template-columns: 1fr 1fr; 
+  grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: flex-start;
   margin-bottom: 50px;
@@ -174,7 +180,8 @@ body {
   gap: 12px;
 }
 
-.contact-form-card input, .contact-form-card textarea {
+.contact-form-card input,
+.contact-form-card textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ddd;
@@ -209,7 +216,7 @@ body {
 .map-placeholder {
   width: 100%;
   height: 400px;
-  background: #2c2c2c; 
+  background: #2c2c2c;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -235,13 +242,16 @@ body {
   .gallery-grid {
     grid-template-columns: 1fr;
   }
+
   .gallery-item.big {
     grid-column: span 1;
     grid-row: span 1;
   }
+
   .gallery-banner h2 {
     font-size: 24px;
   }
+
   .gallery-banner {
     height: 100px;
   }
