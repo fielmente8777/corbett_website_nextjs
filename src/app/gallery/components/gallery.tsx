@@ -50,7 +50,7 @@ export default function Gallery({ galleryImages }: Props) {
           <button
             key={index}
             onClick={() => setSelected(cat)}
-            className={selected === cat ? "active" : ""}
+            className={`${selected === cat ? "active" : ""} capitalize`}
           >
             {cat}
           </button>

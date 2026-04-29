@@ -154,94 +154,182 @@
   display: none;
 }
 
-/* CONTACT PAGE */
 
-.contact-section {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 48px;
-  align-items: flex-start;
-}
+.content-class {
+  line-height: 1.7;
+  font-size: clamp(1rem, 2.5vw, 1.25rem); // 16px → 22px
 
-@media (max-width: 768px) {
-  .contact-section {
-    grid-template-columns: 1fr;
+  /* Reset */
+  > *:last-child {
+    margin-bottom: 0;
   }
-}
 
-/* LEFT SIDE */
+  /* Headings */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 200;
+    line-height: 1.3;
+    margin: 2rem 0 1rem;
+    font-family: var(--font-primary);
+    color: var(--primary);
+  }
 
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
+  h1 {
+    font-size: clamp(2rem, 4vw, 2.75rem); // 32 → 44
+  }
 
-.contact-block {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+  h2 {
+    font-size: clamp(1.6rem, 3vw, 2.125rem); // 26 → 34
+  }
 
-.contact-title {
-  font-size: 28px;
-  font-weight: 600;
-  color: #110D3C;
-}
+  h3 {
+    font-size: clamp(1.35rem, 2.5vw, 1.75rem); // 22 → 28
+  }
 
-.contact-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
+  h4 {
+    font-size: clamp(1.15rem, 2vw, 1.4rem); // 18 → 22
+  }
 
-.contact-item {
-  display: flex;
-  gap: 12px;
-  font-size: 16px;
-  color: #686868;
-  align-items: flex-start;
-}
+  /* Paragraphs */
+  p {
+    margin-bottom: 1.25rem;
+    font-size: inherit;
+  }
 
-.contact-divider {
-  height: 1px;
-  width: 100%;
-  background: #e5e5e5;
-}
+  /* Lists */
+  ul,
+  ol {
+    margin: 1.25rem 0 1.25rem 1.5rem;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
 
-/* FORM */
+  li {
+    // margin-bottom: 0.6rem;
+    line-height: 1.65;
+    font-size: inherit;
+  }
 
-.contact-form-card {
-  background: #fff;
-  padding: 24px;
-  border-radius: 16px;
-  box-shadow: 0 7px 29px rgba(100, 100, 111, 0.2);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+  ul li {
+    list-style-type: disc;
+  }
 
-.contact-form-title {
-  font-size: 28px;
-  font-weight: 600;
-  color: #110D3C;
-  text-transform: uppercase;
-}
+  ol li {
+    list-style-type: decimal;
+  }
 
-.contact-form-note {
-  font-size: 14px;
-  color: #686868;
-}
+  /* Images inside content */
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    margin: 2rem 0;
+  }
+  /* ---------- Tables ---------- */
+  table {
+    width: max-content;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.95em;
+    line-height: 1.6;
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    overflow: hidden;
 
-/* MAP SECTION */
+    /* Mobile safety */
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 
-.contact-map-section {
-  margin-top: 60px;
-}
+  thead {
+    background-color: #f9fafb;
+  }
 
-.contact-map-wrapper {
-  width: 100%;
-  aspect-ratio: 4 / 2.2;
-  border-radius: 12px;
-  overflow: hidden;
+  th,
+  td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid #e5e7eb;
+    white-space: nowrap;
+  }
+
+  th {
+    font-weight: 600;
+    color: #111827;
+    font-size: 0.875rem;
+    letter-spacing: 0.02em;
+  }
+
+  td {
+    color: #374151;
+    font-size: 0.95rem;
+    white-space: normal;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* Zebra striping */
+  tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+  }
+
+  /* Hover (desktop only) */
+  @media (hover: hover) {
+    tbody tr:hover {
+      background-color: #f3f4f6;
+    }
+  }
+
+  /* Compact tables (optional utility) */
+  table.compact {
+    th,
+    td {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+    }
+  }
+
+  /* Caption */
+  caption {
+    caption-side: bottom;
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+    text-align: left;
+  }
+
+  td[data-align="center"],
+  th[data-align="center"] {
+    text-align: center;
+  }
+
+  td.highlight {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* Blockquote */
+  blockquote {
+    margin: 2rem 0;
+    padding-left: 1rem;
+    border-left: 4px solid #e5e7eb;
+    color: #374151;
+    font-style: italic;
+  }
+
+  /* Small text */
+  small {
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
 }

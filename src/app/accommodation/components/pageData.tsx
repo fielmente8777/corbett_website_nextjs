@@ -66,10 +66,12 @@ export const roomsPageData = {
     },
     {
       images: [
-        "/premium-cottages/Classic-Cottage.webp",
-        "/premium-cottages/Classic-Cottage-2.webp",
-        "/premium-cottages/Classic-Cottage-3.webp",
-        "/premium-cottages/Classic-Cottage-4.webp",
+        "/premium-cottages/IMG_8114.webp",
+        "/premium-cottages/IMG_8109.webp",
+        "/premium-cottages/IMG_8118.webp",
+        "/premium-cottages/IMG_8120.webp",
+        "/premium-cottages/IMG_8124.webp",
+        "/premium-cottages/IMG_8142.webp",
       ],
       name: "Premium Cottages",
       size: "480 sq. ft.",
