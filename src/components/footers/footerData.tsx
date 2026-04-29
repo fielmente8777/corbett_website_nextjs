@@ -146,6 +146,11 @@ export const webSiteFooterData: WebSiteFooterData = {
           label: contacts.email[0],
           href: "mailto:" + contacts.email[0],
         },
+        {
+          icon: <MailIcon />,
+          label: contacts.email[1],
+          href: "mailto:" + contacts.email[1],
+        },
       ],
     },
   ],
