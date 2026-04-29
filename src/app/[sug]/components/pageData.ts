@@ -84,7 +84,7 @@ export const policyPageData = [
           <table border="1" cellpadding="8" cellspacing="0">
             <tbody>
               <tr><th>Phone</th><td>+91 89589 88800</td></tr>
-              <tr><th>Email</th><td>contact@corbettthegrand.com</td></tr>
+              <tr><th>Email</th><td>reservations@corbetthegrand.com</td></tr>
             </tbody>
           </table>`,
   },
