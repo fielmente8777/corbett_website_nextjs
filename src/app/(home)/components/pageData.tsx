@@ -9,7 +9,13 @@ export const homePageData = {
     description:
       "Immerse yourself in refined comfort, surrounded by the untamed beauty of Corbett.",
     SocialLinks,
-    images: ["/home/bnr.png"],
+    images: [
+      "/home/bnr.png",
+      "/gallery/Property/IMG-20241212-WA0023.jpg",
+      "/gallery/Property/IMG-20241212-WA0034.jpg",
+      "/gallery/Property/IMG-20250402-WA0074.jpg",
+      "/gallery/Property/IMG-20250402-WA0076.jpg"
+    ],
     video:
       "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/corbatt-the-grand/Property+Full+Video+(1).mp4",
     actions: [
