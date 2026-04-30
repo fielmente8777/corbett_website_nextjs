@@ -13,7 +13,7 @@ export const homePageData = {
       "/home/bnr.png",
       "/gallery/Property/IMG-20241212-WA0023.jpg",
       "/gallery/Property/IMG-20241212-WA0034.jpg",
-      "/gallery/Property/IMG-20250402-WA0074.jpg",
+      "/home/IMG-20250402-WA0074.jpg",
       "/gallery/Property/IMG-20250402-WA0076.jpg"
     ],
     video:
