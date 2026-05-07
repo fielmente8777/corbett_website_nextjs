@@ -131,7 +131,7 @@ export const webSiteFooterData: WebSiteFooterData = {
       links: [
         {
           icon: <LocationIcon />,
-          label:  contacts.addresses[0].address,
+          label: contacts.addresses[0].address,
           href: contacts.addresses[0].addressUrl,
         },
         {
@@ -155,3 +155,71 @@ export const webSiteFooterData: WebSiteFooterData = {
     },
   ],
 };
+
+
+export interface ContactInfo {
+  title: string;
+  links: {
+    label: string;
+    href: string;
+    label2?: string;
+    href2?: string;
+    icon: React.ReactNode;
+  }[];
+}
+
+export const contactInfos: ContactInfo[] = [
+  {
+    title: "Individual Stays",
+    links: [
+      {
+        label: contacts.contactInfos.individualStays.phoneNumbers[0],
+        href: "tel:" + contacts.contactInfos.individualStays.phoneNumbers[0],
+        label2: contacts.contactInfos.individualStays.phoneNumbers[1],
+        href2: "tel:" + contacts.contactInfos.individualStays.phoneNumbers[1],
+        icon: <CallIcon />,
+      },
+      {
+        label: contacts.contactInfos.individualStays.emails[0],
+        href: "mailto:" + contacts.contactInfos.individualStays.emails[0],
+        label2: contacts.contactInfos.individualStays.emails[1],
+        href2: "mailto:" + contacts.contactInfos.individualStays.emails[1],
+        icon: <MailIcon />,
+      },
+    ],
+  },
+  {
+    title: "Corporate",
+    links: [
+      {
+        label: contacts.contactInfos.corporate.phoneNumbers[0],
+        href: "tel:" + contacts.contactInfos.corporate.phoneNumbers[0],
+        icon: <CallIcon />,
+      },
+      {
+        label: contacts.contactInfos.corporate.emails[0],
+        href: "mailto:" + contacts.contactInfos.corporate.emails[0],
+        label2: contacts.contactInfos.corporate.emails[1],
+        href2: "mailto:" + contacts.contactInfos.corporate.emails[1],
+        icon: <MailIcon />,
+      },
+    ],
+  },
+  {
+    title: "WEDDING",
+    links: [
+      {
+        label: contacts.contactInfos.wedding.phoneNumbers[0],
+        href: "tel:" + contacts.contactInfos.wedding.phoneNumbers[0],
+        icon: <CallIcon />,
+      },
+      {
+        label: contacts.contactInfos.wedding.emails[0],
+        href: "mailto:" + contacts.contactInfos.wedding.emails[0],
+        label2: contacts.contactInfos.wedding.emails[1],
+        href2: "mailto:" + contacts.contactInfos.wedding.emails[1],
+        icon: <MailIcon />,
+      },
+    ],
+  },
+];

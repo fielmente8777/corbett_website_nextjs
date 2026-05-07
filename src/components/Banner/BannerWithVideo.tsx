@@ -102,7 +102,7 @@ const BannerWithVideo: React.FC<BannerWithVideoProps> = ({
                   {/* PLAY VIDEO BUTTON */}
                   <button
                     onClick={() => setIsVideoOpen(true)}
-                    className="px-4 py-3 border border-white text-white flex items-center justify-center gap-2 rounded-lg"
+                    className="px-4 hidden md:flex py-3 border border-white text-white items-center justify-center gap-2 rounded-lg"
                   >
                     <VideoPlayButton />
                     {actions[0].label}

@@ -5,9 +5,10 @@ Looking forward to your response.`;
 
 export const contacts = {
   email: ["reservations@corbetthegrand.com", "info@corbettthegrand.com"],
-  phone: ["+91 89589 88800",
+  phone: [
+    "+91 89589 88800",
     //  "+91 98710 10068"
-    ],
+  ],
   WhatsAppCta:
     "https://wa.me/+918958988800?text=" + encodeURIComponent(embededtext),
   addresses: [
@@ -15,9 +16,24 @@ export const contacts = {
       address:
         "Vill. Santoshpur Choi, Near Hanuman Dham, Ramnagar – 244715, Uttarakhand, India",
       addressUrl: "https://maps.app.goo.gl/qvdCViVFnByPyfXF7",
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d211603.3948394075!2d79.133263!3d29.32892!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390a6cc76e0718f7%3A0xc7e15c013bd3ea2!2sCorbett%20The%20Grand!5e1!3m2!1sen!2sin!4v1776993599085!5m2!1sen!2sin",
+      mapUrl:
+        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d211603.3948394075!2d79.133263!3d29.32892!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390a6cc76e0718f7%3A0xc7e15c013bd3ea2!2sCorbett%20The%20Grand!5e1!3m2!1sen!2sin!4v1776993599085!5m2!1sen!2sin",
     },
   ],
+  contactInfos: {
+    individualStays: {
+      phoneNumbers: ["+91-8958988800", "+91-8958988833"],
+      emails: ["khushal@corbettthegrand.com", "ashwani@corbettthegrand.com"],
+    },
+    corporate: {
+      phoneNumbers: ["+91-9711871016"],
+      emails: ["reservation@corbettthegrand.com", "faheem@corbettthegrand.com"],
+    },
+    wedding: {
+      phoneNumbers: ["+91-8958988810"],
+      emails: ["reservation@corbettthegrand.com", "amit@corbettthegrand.com"],
+    },
+  },
 
   socialContacts: {
     facebook: "https://www.facebook.com/corbettthegrand",

@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { CtaBtn } from "../buttons/CtaBtn";
 import { Container } from "../sectionComponants";
-import { webSiteFooterData } from "./footerData";
+import { contactInfos, webSiteFooterData } from "./footerData";
+import AccordionLinks from "./AccordionLinks";
 
 const WebSiteFooter = () => {
   return (
@@ -39,7 +40,9 @@ const WebSiteFooter = () => {
           </Link>
           {/* call contact */}
           <div className="flex flex-col gap-3 max-md:order-3">
-            <p className="max-md:text-center text-lg ">{webSiteFooterData.description}</p>
+            <p className="max-md:text-center text-lg ">
+              {webSiteFooterData.description}
+            </p>
             <div className="md:ml-auto max-md:mx-auto w-fit flex items-center">
               <CtaBtn
                 type="link"
@@ -54,10 +57,10 @@ const WebSiteFooter = () => {
             </div>
           </div>
         </div>
-        <div className="grid md:py-12 py-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.1fr_1.1fr_1.1fr_1.4fr] gap-4 md:gap-4">
-          {webSiteFooterData.lists.slice(1).map((list, index) => (
+        <div className="grid md:py-12 py-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_1.1fr_1fr_1.8fr] gap-4 md:gap-4">
+          {webSiteFooterData.lists.slice(1, 4).map((list, index) => (
             <div key={index}>
-              <h2 className="md:text-[2rem] font-primary font-light uppercase text-2xl mb-4">
+              <h2 className="md:text-2xl font-primary font-light uppercase text-xl mb-4">
                 {list.title}
               </h2>
               <ul className={`flex flex-col gap-2`}>
@@ -90,9 +93,7 @@ const WebSiteFooter = () => {
                       href={item.href}
                       className="flex gap-2"
                     >
-                      <span className="">
-                        {item.label}
-                      </span>
+                      <span className="">{item.label}</span>
                     </Link>
                     {item.label2 && <span className="-ml-1">,</span>}
                     {item.label2 && item.href2 && (
@@ -102,11 +103,7 @@ const WebSiteFooter = () => {
                         href={item.href2}
                         className="flex gap-2 max-md:ml-8"
                       >
-                        <span
-                          
-                        >
-                          {item.label2}
-                        </span>
+                        <span>{item.label2}</span>
                       </Link>
                     )}
                   </li>
@@ -114,6 +111,11 @@ const WebSiteFooter = () => {
               </ul>
             </div>
           ))}
+          <div className="">
+            {contactInfos.map((list, index) => (
+              <AccordionLinks key={index} {...list} />
+            ))}
+          </div>
         </div>
       </Container>
       <div className="border-t border-white">
