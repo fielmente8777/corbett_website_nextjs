@@ -15,7 +15,6 @@ export default function ContactPage() {
           <div className="flex items-center">
             <ContactInfo
               visitData={contactPageData.visitData}
-              reservationsData={contactPageData.reservationsData}
             />
           </div>
 
