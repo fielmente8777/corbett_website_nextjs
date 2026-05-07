@@ -27,14 +27,10 @@ type VisitData = {
   }[];
 };
 
-type ReservationsData = {
-  title: string;
-  items: string[];
-};
+
 
 type Props = {
   visitData: VisitData;
-  reservationsData: ReservationsData;
 };
 
 export default function ContactInfo({ visitData }: Props) {
