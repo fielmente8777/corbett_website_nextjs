@@ -20,60 +20,91 @@ export const galleryPageData = {
       { src: "/gallery/hall/20250319_064117000_iOS.jpg", alt: "Halls" },
       { src: "/gallery/hall/IMG-20250319-WA0022.jpg", alt: "Halls" },
       { src: "/gallery/hall/IMG-20250319-WA0024.jpg", alt: "Halls" },
+
       // Premium Cottages
-      { src: "/premium-cottages/IMG_8114.webp", alt: "Rooms & Suites" },
-      { src: "/premium-cottages/IMG_8109.webp", alt: "Rooms & Suites" },
-      { src: "/premium-cottages/IMG_8118.webp", alt: "Rooms & Suites" },
-      { src: "/premium-cottages/IMG_8120.webp", alt: "Rooms & Suites" },
-      { src: "/premium-cottages/IMG_8124.webp", alt: "Rooms & Suites" },
-      { src: "/premium-cottages/IMG_8142.webp", alt: "Rooms & Suites" },
+     {src: "/premium-cottages/IMG_8109-1.webp", alt: "Rooms & Suites" },
+      { src: "/premium-cottages/IMG_8114-1.webp", alt: "Rooms & Suites" },
+      { src: "/premium-cottages/IMG_8116-1.webp", alt: "Rooms & Suites" },
+      { src: "/premium-cottages/IMG_8118-1.webp", alt: "Rooms & Suites" },
+      { src: "/premium-cottages/IMG_8120-1.webp", alt: "Rooms & Suites" },
+      { src: "/premium-cottages/IMG_8125-1.webp", alt: "Rooms & Suites" },
+      { src: "/premium-cottages/IMG_8142-1.webp", alt: "Rooms & Suites" },
+      {
+        src: "/premium-cottages/WhatsApp-Image-2025-03-13-at-17.52.22-1.webp",
+        alt: "Rooms & Suites",
+      },
+       {
+        src: "/premium-cottages/IMG-20250307-WA0059-1.webp",
+        alt: "Rooms & Suites",
+      },
+      {
+        src: "/premium-cottages/IMG-20250402-WA0072-1.webp",
+        alt: "Rooms & Suites",
+      },
+      
 
       // Plunge
-      { src: "/Plunge/IMG_8043.webp", alt: "Rooms & Suites" },
-      { src: "/Plunge/IMG_8058.webp", alt: "Rooms & Suites" },
-      { src: "/Plunge/IMG_8069.webp", alt: "Rooms & Suites" },
-      { src: "/Plunge/IMG_8077.webp", alt: "Rooms & Suites" },
-      { src: "/Plunge/IMG_8090.webp", alt: "Rooms & Suites" },
-      { src: "/Plunge/IMG_8094.webp", alt: "Rooms & Suites" },
-      { src: "/Plunge/IMG_8114.webp", alt: "Rooms & Suites" },
-      { src: "/Plunge/IMG_8134.webp", alt: "Rooms & Suites" },
-      { src: "/Plunge/IMG_8142.webp", alt: "Rooms & Suites" },
-      { src: "/Plunge/IMG_8187.webp", alt: "Rooms & Suites" },
-      { src: "/Plunge/IMG_8190.webp", alt: "Rooms & Suites" },
-      { src: "/Plunge/IMG_8193.webp", alt: "Rooms & Suites" },
-      { src: "/Plunge/IMG_8194.webp", alt: "Rooms & Suites" },
-      { src: "/Plunge/IMG_8204.webp", alt: "Rooms & Suites" },
-      { src: "/Plunge/IMG_8205.webp", alt: "Rooms & Suites" },
+
+      
+      { src: "/plunge-pool-cottages/IMG_8200-1.webp", alt: "Rooms & Suites" },
+      // { src: "/plunge-pool-cottages/IMG_8202-1.webp", alt: "Rooms & Suites" },
+      // { src: "/plunge-pool-cottages/IMG_8190-1.webp", alt: "Rooms & Suites" },
+
+      { src: "/plunge-pool-cottages/IMG_8204-1.webp", alt: "Rooms & Suites" },
+      { src: "/plunge-pool-cottages/IMG_8185-1.webp", alt: "Rooms & Suites" },
+      { src: "/plunge-pool-cottages/IMG_8193-1.webp", alt: "Rooms & Suites" },
+      { src: "/plunge-pool-cottages/IMG_8194-1.webp", alt: "Rooms & Suites" },
 
       // Classic
-      { src: "/classic/IMG_8032.webp", alt: "Rooms & Suites" },
-      { src: "/classic/IMG_8043.webp", alt: "Rooms & Suites" },
-      { src: "/classic/IMG_8046.webp", alt: "Rooms & Suites" },
-      { src: "/classic/IMG_8050.webp", alt: "Rooms & Suites" },
-      { src: "/classic/IMG_8057.webp", alt: "Rooms & Suites" },
-      { src: "/classic/IMG_8058.webp", alt: "Rooms & Suites" },
-      { src: "/classic/IMG_8061.webp", alt: "Rooms & Suites" },
-      { src: "/classic/IMG_8069.webp", alt: "Rooms & Suites" },
-      { src: "/classic/IMG_8072.webp", alt: "Rooms & Suites" },
-      { src: "/classic/IMG_8077.webp", alt: "Rooms & Suites" },
-      { src: "/classic/IMG_8079.webp", alt: "Rooms & Suites" },
-      { src: "/classic/IMG_8083.webp", alt: "Rooms & Suites" },
-      { src: "/classic/IMG_8085.webp", alt: "Rooms & Suites" },
-      { src: "/classic/IMG_8130.webp", alt: "Rooms & Suites" },
-      { src: "/classic/IMG_8134.webp", alt: "Rooms & Suites" },
-      { src: "/classic/IMG_8137.webp", alt: "Rooms & Suites" },
+
+      {
+        src: "/classic-cottages/Classic-cottage-4-1.webp",
+        alt: "Rooms & Suites",
+      },
+      {
+        src: "/classic-cottages/Classic-cottage-6-1.webp",
+        alt: "Rooms & Suites",
+      },
+      {
+        src: "/classic-cottages/Classic-cottages-2-1.webp",
+        alt: "Rooms & Suites",
+      },
+      {
+        src: "/classic-cottages/Classic-cottages-3-1.webp",
+        alt: "Rooms & Suites",
+      },
+      {
+        src: "/classic-cottages/Classic-cottages-3-2.webp",
+        alt: "Rooms & Suites",
+      },
+      { src: "/classic-cottages/DSC_9236-1.webp", alt: "Rooms & Suites" },
+      { src: "/classic-cottages/IMG_8035-1.webp", alt: "Rooms & Suites" },
+      { src: "/classic-cottages/IMG_8043-1.webp", alt: "Rooms & Suites" },
+      { src: "/classic-cottages/IMG_8050-1.webp", alt: "Rooms & Suites" },
+      { src: "/classic-cottages/IMG_8077-1.webp", alt: "Rooms & Suites" },
+
+      { src: "/classic-cottages/IMG_8060-1.webp", alt: "Rooms & Suites" },
+      { src: "/classic-cottages/IMG_8065-1.webp", alt: "Rooms & Suites" },
+      { src: "/classic-cottages/IMG_8057-1.webp", alt: "Rooms & Suites" },
+
+      { src: "/classic-cottages/IMG_8079-1.webp", alt: "Rooms & Suites" },
+      { src: "/classic-cottages/IMG_8082-1.webp", alt: "Rooms & Suites" },
+      { src: "/classic-cottages/IMG_8085-1.webp", alt: "Rooms & Suites" },
+      { src: "/classic-cottages/IMG_8033-1.webp", alt: "Rooms & Suites" },
+
 
       // Superior
-      { src: "/superior/IMG_8024.webp", alt: "Rooms & Suites" },
-      { src: "/superior/IMG_8027.webp", alt: "Rooms & Suites" },
-      { src: "/superior/IMG_8028.webp", alt: "Rooms & Suites" },
-      { src: "/superior/IMG_8089.webp", alt: "Rooms & Suites" },
-      { src: "/superior/IMG_8090.webp", alt: "Rooms & Suites" },
-      { src: "/superior/IMG_8093.webp", alt: "Rooms & Suites" },
-      { src: "/superior/IMG_8094.webp", alt: "Rooms & Suites" },
-      { src: "/superior/IMG_8095.webp", alt: "Rooms & Suites" },
-      { src: "/superior/IMG_8097.webp", alt: "Rooms & Suites" },
-      { src: "/superior/IMG_8100.webp", alt: "Rooms & Suites" },
+
+      { src: "/superior-rooms/IMG_8024-1.webp", alt: "Rooms & Suites" },
+      { src: "/superior-rooms/IMG_8027-1.webp", alt: "Rooms & Suites" },
+      { src: "/superior-rooms/IMG_8092-1.webp", alt: "Rooms & Suites" },
+      { src: "/superior-rooms/IMG_8093-1.webp", alt: "Rooms & Suites" },
+      { src: "/superior-rooms/IMG_8094-1.webp", alt: "Rooms & Suites" },
+      { src: "/superior-rooms/Superior-Room-1-1.webp", alt: "Rooms & Suites" },
+      { src: "/superior-rooms/Superior-Room-5-1.webp", alt: "Rooms & Suites" },
+      { src: "/superior-rooms/IMG_8097-1.webp", alt: "Rooms & Suites" },
+
+      //pool
 
       { src: "/gallery/pool/IMG-20241212-WA0037.jpg", alt: "pool" },
       { src: "/gallery/pool/IMG-20241212-WA0038.jpg", alt: "pool" },
