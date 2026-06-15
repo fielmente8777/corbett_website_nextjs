@@ -126,7 +126,7 @@ const WebSiteFooter = () => {
             <span className="md:block hidden">|</span>
             <p className="">All Rights Reserved</p>
             <span className="md:block hidden">|</span>
-            <p className="">Powered by Fielmente</p>
+            <p className="">Powered by <Link href="https://fielmente.com" target="_blank" rel="noopener noreferrer" className="font-semibold">Fielmente</Link></p>
           </div>
         </Container>
       </div>
