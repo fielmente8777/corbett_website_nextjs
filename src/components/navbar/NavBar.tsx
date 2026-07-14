@@ -7,6 +7,7 @@ import { IoMdMenu } from "react-icons/io";
 import { CtaBtn } from "../buttons/CtaBtn";
 import { navData } from "./navData";
 import MobileNav from "./MobileNav";
+import { contacts } from '../../utils/constant';
 const NavBar = () => {
   const { setIsMobileNavOpen } = useWebContext();
   const pathName = usePathname();
@@ -40,7 +41,7 @@ const NavBar = () => {
         </ul>
         <CtaBtn
           type="link"
-          href={""}
+          href={contacts.WhatsAppCta}
           label={"Book Now"}
           target="_blank"
           rel="noopener noreferrer"
