@@ -39,6 +39,7 @@ export interface introProps {
   title: string;
   description: string[];
   image: string;
+  images?: string[];
   video: {
     src: string;
     poster: string;

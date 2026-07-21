@@ -12,6 +12,13 @@ export const weddingPageData = {
       "Weddings become truly unforgettable when celebrated amidst breathtaking landscapes, pleasant weather, and lush green surroundings, and Corbett the Grand offers the perfect setting for a magical destination wedding. Spread across 20+ acres of beautifully landscaped gardens, the resort features 150+ spacious cottages and rooms, four scenic lawns, and a seamless blend of indoor and outdoor venues, including four air-conditioned, versatile banquet spaces opening out to the pool and gardens. With two beautiful swimming pools, three multi-cuisine restaurants, and three well-equipped conference halls, the property is designed to host celebrations of every scale, accommodating up to 2,000 guests with ease—making Corbett the Grand an ideal choice for an elegant, memorable destination wedding.",
     ],
     image: "/wedding/intro-1.png",
+    images: [
+      "/wedding/img-1.jpg",
+      "/wedding/img-2.jpg",
+      "/wedding/img-3.jpg",
+      "/wedding/img-4.jpg",
+      "/wedding/img-5.jpg",
+    ],
     video: {
       src: "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/corbatt-the-grand/Haldi-Reel-Corbett-grand.mp4",
       poster: "/wedding/poster.png",
@@ -35,7 +42,7 @@ export const weddingPageData = {
     title: "The perfect choice for your destination wedding",
     description: [
       "At Corbett The Grand, each venue is infused with natural charm and elegance. With inbuilt modern technology, the latest theme-based décor, professional and friendly service, and abundant free parking available on site, Corbett The Grand stands out as one of the most preferred and popular choices for large ceremonies across the entire Corbett region.",
-      "Corbett The Grand caters to a wide range of functions and events—be it a gala dinner, intimate gathering, wedding, or anniversary. The largest pillar-less hall, spanning 4,200 sq. ft., can comfortably accommodate up to 350 guests and features a dedicated stage and dance floor. Our beautifully landscaped gardens provide the perfect setting for Mehendi, Sagan ceremonies, and grand receptions."
+      "Corbett The Grand caters to a wide range of functions and events—be it a gala dinner, intimate gathering, wedding, or anniversary. The largest pillar-less hall, spanning 4,200 sq. ft., can comfortably accommodate up to 350 guests and features a dedicated stage and dance floor. Our beautifully landscaped gardens provide the perfect setting for Mehendi, Sagan ceremonies, and grand receptions.",
     ],
     images: ["/wedding/venue-1.png", "/wedding/venue-2.png"],
     link: {
@@ -49,7 +56,19 @@ export const weddingPageData = {
     description: [
       "Every wedding should be as unique as your love. At Corbett The Grand, personalize every detail with curated packages and enjoy a seamless, all-in-one celebration—from stunning vows to elegant bridal suites.",
     ],
-    images: ["/wedding/curated-1.png", "/wedding/curated-2.png"],
+    images: [
+      // "/wedding/curated-1.png", "/wedding/curated-2.png",
+      "/wedding/new-weding/Rectangle-34624282.png",
+      "/wedding/new-weding/Rectangle-34624285.png",
+      "/wedding/new-weding/Rectangle-34624283.png",
+      "/wedding/new-weding/Rectangle-34624288.png",
+      "/wedding/new-weding/Rectangle-34624284.png",
+      "/wedding/new-weding/Rectangle-34624289.png",
+      "/wedding/new-weding/Rectangle-34624286.png",
+      "/wedding/new-weding/Rectangle-34624290.png",
+      "/wedding/new-weding/Rectangle-34624287.png",
+      "/wedding/new-weding/Rectangle-34624291.png",
+    ],
   },
 
   faqData: {
