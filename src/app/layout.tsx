@@ -85,7 +85,7 @@ export default function RootLayout({
 
           <Footer />
           <Call callNumber={contacts.phone[0]} />
-          <Whatsapp whatsAppNumber={contacts.phone[0]} />
+          <Whatsapp whatsAppNumber={contacts.WhatsAppCta} />
         </WebProvider>
         {/* <!-- Eazbot Script (Next.js) --> */}
         <Script id="chatbot-config" strategy="afterInteractive">

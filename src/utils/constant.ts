@@ -10,7 +10,7 @@ export const contacts = {
     //  "+91 98710 10068"
   ],
   WhatsAppCta:
-    "https://wa.me/+918958988800?text=" + encodeURIComponent(embededtext),
+    "https://wa.me/+1 711-745-9883?text=" + encodeURIComponent(embededtext),
   addresses: [
     {
       address:
