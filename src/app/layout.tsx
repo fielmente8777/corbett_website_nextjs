@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import { Aboreto, Montserrat } from "next/font/google";
 import "./globals.css";
 import "./styles.scss";
+import "./editorial.css";
+import { pageMetadata, hotelSchema, jsonLd } from "@/lib/seo";
+import ContactAnalytics from "@/components/Enquiry/ContactAnalytics";
 import { WebProvider } from "@/context-api/WebContext";
 import { Footer } from "@/components/footers";
 import NavBar from "@/components/navbar/NavBar";
 import Script from "next/script";
 import Call from "@/components/ContactButton/Call";
 import Whatsapp from "@/components/ContactButton/WhatsApp";
-import { contacts } from "@/utils/constant";
 
 const aboreto = Aboreto({
   variable: "--font-aboreto",
@@ -22,8 +24,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Corbett The Grand",
-  description: "Corbett The Grand",
+  ...pageMetadata("Resort in Jim Corbett, Ramnagar | Corbett The Grand", "Discover Corbett The Grand in Ramnagar, with rooms and cottages, resort experiences and destination wedding venues. Enquire about your stay or celebration.", "/"),
+  metadataBase: new URL("https://corbettthegrand.com"),
+  robots: { index: process.env.VERCEL_ENV !== "preview", follow: true },
 };
 
 export default function RootLayout({
@@ -39,7 +42,7 @@ export default function RootLayout({
     >
       <head>
         <Script
-          id="google-tag-manager"
+          id="google-analytics-loader"
           strategy="afterInteractive"
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-N9SG9JCZ0C"
@@ -69,6 +72,9 @@ export default function RootLayout({
         {/* <!-- End Google Tag Manager - - > */}
       </head>
       <body>
+        <a href="#main-content" className="skip-link">Skip to content</a>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(hotelSchema) }} />
+        <ContactAnalytics />
         {/* <!-- Google Tag Manager (noscript) --> */}
         <noscript>
           <iframe
@@ -84,8 +90,8 @@ export default function RootLayout({
           {children}
 
           <Footer />
-          <Call callNumber={contacts.phone[0]} />
-          <Whatsapp whatsAppNumber={contacts.WhatsAppCta} />
+          <Call />
+          <Whatsapp />
         </WebProvider>
         {/* <!-- Eazbot Script (Next.js) --> */}
         <Script id="chatbot-config" strategy="afterInteractive">

@@ -11,22 +11,22 @@ import {
 
 export const SocialLinks = [
   {
-    label: Object.keys(contacts.socialContacts)[0],
+    label: "Facebook",
     href: contacts.socialContacts.facebook,
     icon: <FacebookIcon />,
   },
   {
-    label: Object.keys(contacts.socialContacts)[2],
+    label: "Instagram",
     href: contacts.socialContacts.instagram,
     icon: <InstagramIcon />,
   },
   {
-    label: Object.keys(contacts.socialContacts)[4],
+    label: "LinkedIn",
     href: contacts.socialContacts.linkedin,
     icon: <LinkedinIcon />,
   },
   {
-    label: Object.keys(contacts.socialContacts)[5],
+    label: "X",
     href: contacts.socialContacts.twitter,
     icon: <TwitterIcon />,
   },
@@ -56,7 +56,7 @@ export const webSiteFooterData: WebSiteFooterData = {
   logo: "/footer_logo.png",
   description: "Reserve your luxury holiday!",
   link: {
-    label: "Book Now",
+    label: "Enquire about your stay",
     href: contacts.WhatsAppCta,
   },
   lists: [
@@ -66,6 +66,13 @@ export const webSiteFooterData: WebSiteFooterData = {
     {
       title: "Quick Links",
       links: [
+        { label: "Corporate Offsites", href: "/corporate-offsites" },
+        { label: "Facilities", href: "/facilities" },
+        { label: "Dining", href: "/dining" },
+        { label: "Travel and Wedding Blog", href: "/blogs" },
+        { label: "How to Reach", href: "/how-to-reach" },
+        { label: "Guest FAQs", href: "/faqs" },
+        { label: "Stay Packages", href: "/offers" },
         {
           label: "Home",
           href: "/",
@@ -97,19 +104,19 @@ export const webSiteFooterData: WebSiteFooterData = {
       links: [
         {
           label: "Superior Rooms",
-          href: "/accommodation/#superior-rooms",
+          href: "/accommodation/superior-rooms",
         },
         {
           label: "Classic Cottages",
-          href: "/accommodation/#classic-cottages",
+          href: "/accommodation/classic-cottages",
         },
         {
           label: "Premium Cottages",
-          href: "/accommodation/#premium-cottages",
+          href: "/accommodation/premium-cottages",
         },
         {
           label: "Plunge Pool Cottages",
-          href: "/accommodation/#plunge-pool-cottages",
+          href: "/accommodation/plunge-pool-cottages",
         },
       ],
     },
@@ -138,9 +145,7 @@ export const webSiteFooterData: WebSiteFooterData = {
           icon: <CallIcon />,
           label: contacts.phone[0],
           href: "tel:" + contacts.phone[0],
-          label2: contacts.phone[1],
-          href2: "tel:" + contacts.phone[1],
-        },
+                  },
         {
           icon: <MailIcon />,
           label: contacts.email[0],

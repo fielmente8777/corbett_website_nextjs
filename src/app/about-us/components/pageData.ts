@@ -27,7 +27,7 @@ export const aboutPageData = {
     description: [
       "At Corbett The Grand, every aspect of our resort is thoughtfully designed with care and responsibility. We understand the finer nuances of operating a resort of this scale within such a sensitive ecological zone, and we take this responsibility very seriously. Our constant endeavour is to create enthralling, meaningful experiences for each and every guest—every single time.",
       "Behind every memorable stay is a passionate team. Each member of our resort family proudly puts in hours of dedicated hard work, often under challenging conditions, with just one purpose: to bring a smile to your face. That smile is the most precious gift we could ever ask for.",
-      "It is our distinct pleasure to welcome you to Corbett The Grand. The Only, Truly Grand Resort in Corbett National Park.",
+      "It is our distinct pleasure to welcome you to Corbett The Grand. A resort stay in Santoshpur Choi, Ramnagar, near the Corbett region.",
     ],
     images: ["/about-us/experience.png"],
   },

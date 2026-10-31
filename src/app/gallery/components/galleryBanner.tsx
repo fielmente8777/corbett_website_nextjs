@@ -13,7 +13,7 @@ export default function GalleryBanner({ title }: Props) {
       containerClassName="text-center"
     >
       <div className="content-column">
-        <h2>{title}</h2>
+        <h1>{title}</h1>
       </div>
     </SectionWithContainer>
   );

@@ -59,7 +59,7 @@ const BannerWithVideo: React.FC<BannerWithVideoProps> = ({
           className="w-full h-full"
           renderSlide={(src) => (
             <div className="relative w-full h-full">
-              <Image src={src} alt="" fill className="object-cover" />
+              <Image src={src} alt="Corbett The Grand resort in Ramnagar" fill sizes="100vw" priority={src === images[0]} className="object-cover" />
             </div>
           )}
         />
@@ -88,7 +88,7 @@ const BannerWithVideo: React.FC<BannerWithVideoProps> = ({
             {/* Center Content */}
             <div className="absolute inset-0 z-10 flex items-center justify-center max-sm:px-3">
               <div className="max-w-4xl w-full relative after:absolute after:bg-white/5 after:inset-x-0 after:-inset-y-4 after:-z-10 md:after:rounded-full after:rounded-2xl after:backdrop-blur-[2px]">
-                <h1 className="text-4xl md:text-7xl font-primary text-center text-white">
+                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-primary text-center text-white">
                   {title}
                   {subtitle && <span className="block">{subtitle}</span>}
                 </h1>

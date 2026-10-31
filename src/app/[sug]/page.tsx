@@ -1,53 +1,26 @@
+import { notFound } from "next/navigation";
 import { SectionWithContainer } from "@/components/sectionComponants";
 import { policyPageData } from "./components/pageData";
 import TextBanner from "@/components/Banner/TextBanner";
-
-interface Params {
-  params: {
-    sug: string;
-  };
+import { findServicePage, servicePages } from "@/data/service-pages";
+import ContentPage from "@/components/Editorial/ContentPage";
+import { pageMetadata } from "@/lib/seo";
+type Props = { params: Promise<{ sug: string }> };
+export const dynamicParams = false;
+export function generateStaticParams() { return [...policyPageData.map(page => ({ sug: page.slug })), ...servicePages.filter(page => page.path.split("/").length === 2).map(page => ({ sug: page.path.slice(1) }))]; }
+export async function generateMetadata({ params }: Props) {
+ const { sug } = await params;
+ const page = findServicePage("/" + sug);
+ if (page) return pageMetadata(page.seoTitle, page.description, page.path, page.image);
+ const policy = policyPageData.find(page => page.slug === sug);
+ if (!policy) notFound();
+ return pageMetadata(policy.metadata.metaTitle, policy.metadata.description, "/" + sug);
 }
-
-export async function generateStaticParams({ params }: Params) {
-  const page = await policyPageData;
-
-  return page.map((page) => ({
-    title: page.title,
-    description: page.content,
-  }));
-}
-
-export async function generateMetadata({ params }: Params) {
-  const path = await params;
-  const page = await policyPageData.find((page) => page.slug === path.sug);
-
-  if (!page) {
-    return {
-      title: "Page Not Found",
-    };
-  }
-
-  return {
-    title: page?.metadata.metaTitle,
-    description: page?.metadata.description,
-  };
-}
-
-export default async function page({ params }: Params) {
-  const path = await params;
-  const PageData = await policyPageData.find((page) => page.slug === path.sug);
-  if (!PageData) {
-    return <div>Page Not Found</div>;
-  }
-  return (
-    <main>
-      <TextBanner title={PageData.title} />
-      <SectionWithContainer >
-        <div
-          className="content-class"
-          dangerouslySetInnerHTML={{ __html: PageData.content }}
-        ></div>
-      </SectionWithContainer>
-    </main>
-  );
+export default async function Page({ params }: Props) {
+ const { sug } = await params;
+ const page = findServicePage("/" + sug);
+ if (page) return <ContentPage page={page} />;
+ const policy = policyPageData.find(page => page.slug === sug);
+ if (!policy) notFound();
+ return <main id="main-content"><TextBanner title={policy.title} /><SectionWithContainer><div className="content-class" dangerouslySetInnerHTML={{ __html: policy.content }} /></SectionWithContainer></main>;
 }

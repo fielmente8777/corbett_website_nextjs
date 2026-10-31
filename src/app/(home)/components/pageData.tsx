@@ -4,8 +4,8 @@ import { AdventureActivitiesIcon, BoatingIcon, ConferenceHallIcon, DiscothequeIc
 
 export const homePageData = {
   bannerData: {
-    title: "Not Just a Stay.",
-    subtitle: "A Grand Experience.",
+    title: "Stays and celebrations in Jim Corbett",
+    subtitle: "",
     description:
       "Immerse yourself in refined comfort, surrounded by the untamed beauty of Corbett.",
     SocialLinks,
@@ -23,7 +23,7 @@ export const homePageData = {
       { label: "ABOUT US", href: "/about-us" },
       {
         label: "Call:" + contacts.phone[0],
-        href: "tel:" + contacts.phone[1] + "",
+        href: "tel:" + contacts.phone[0].replace(/[^+0-9]/g, "") + "",
       },
     ],
     note: "Scroll to explore",
@@ -32,7 +32,7 @@ export const homePageData = {
   introData: {
     title: "WELCOME TO Corbett The Grand",
     description: [
-      "Life is all about perspectives and the fun lies in comprehending it.",
+      "Welcome to Corbett The Grand in Santoshpur Choi, Ramnagar. Plan a resort stay, a destination wedding or time away with your team.",
       "At Corbett The Grand, we realise the magnitude of the idea called Corbett National Park and bring to you the very same perspective both in terms of scale and purpose. Our resort is a product of our love for Kumaun and its unique culture. In every aspect of our resort, you shall find a touch of our concern for the local ecosystem and traditions.",
       "Our sprawling resort stands majestically amidst swaying paddy fields adjoining decades old mango and lychee orchards, which add to the green quotient of the locale.",
     ],

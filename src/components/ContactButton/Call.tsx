@@ -1,30 +1,5 @@
 "use client";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
-import { IoCall } from "react-icons/io5";
-
-function Call({ callNumber }: { callNumber: string }) {
-  const pathName = usePathname();
-  
-    if (pathName === "/thank-you/") {
-      return null;
-    }
-  return (
-    <div
-      className={`fixed bottom-10 lg:left-3  left-4 z-20 cursor-pointer`}
-    >
-      <Link
-        href={`tel: ${callNumber ? callNumber : "+911234567890"} `}
-        target="_blank"
-        rel="noreferrer"
-        className="w-12 h-12 rounded-full flex items-center justify-center bg-blue-700 hover:bg-primary/95 hover:shadow-2xl transition-all"
-      >
-        <IoCall size={29} color="white" />
-        <span className="sr-only">call</span>
-      </Link>
-    </div>
-  );
-}
-
-export default Call;
+import { FaPhoneAlt } from "react-icons/fa";
+import { telephoneLink, intentForPath } from "@/lib/contact-links";
+export default function Call() { const path = usePathname(); if (path.replace(/\/$/, "") === "/thank-you") return null; return <a href={telephoneLink(intentForPath(path))} aria-label="Call the Corbett The Grand team" className="fixed bottom-8 left-4 z-40 w-12 h-12 rounded-full flex items-center justify-center bg-secondary text-white shadow-lg"><FaPhoneAlt size={22} aria-hidden="true" /></a>; }

@@ -1,34 +1,13 @@
 "use client";
+import { useEffect, useRef } from "react";
+import Link from "next/link";
 import { useWebContext } from "@/context-api/WebContext";
-import { MdClose } from "react-icons/md";
 import { navData } from "./navData";
-
-const MobileNav = () => {
-  const { setIsMobileNavOpen, isMobileNavOpen } = useWebContext();
-  return (
-    <div
-      className={`fixed w-[70%] h-dvh bg-white z-50 top-0 right-0 duration-1000 transition ease-in-out ${isMobileNavOpen ? "translate-x-0" : "translate-x-full"}`}
-    >
-      <button>
-        <MdClose
-          onClick={() => setIsMobileNavOpen(false)}
-          className="absolute top-4 right-4 text-2xl"
-        />
-      </button>
-      <ul className="flex flex-col gap-4 mt-12">
-        {navData.links.map((item, index) => (
-          <li key={index}>
-            <a
-              href={item.href}
-              className="text-primary p-2  duration-300 ease-in-out hover:border-secondary"
-            >
-              {item.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-export default MobileNav;
+export default function MobileNav() {
+ const { setIsMobileNavOpen, isMobileNavOpen } = useWebContext();
+ const dialog = useRef<HTMLDialogElement>(null);
+ useEffect(() => { const element = dialog.current; if (!element) return; if (isMobileNavOpen && !element.open) element.showModal(); else if (!isMobileNavOpen && element.open) element.close(); }, [isMobileNavOpen]);
+ return <dialog ref={dialog} className="mobile-nav-panel" aria-label="Main navigation" onCancel={() => setIsMobileNavOpen(false)} onClose={() => setIsMobileNavOpen(false)} onClick={event => { if (event.target === event.currentTarget) setIsMobileNavOpen(false); }}>
+ <div className="flex items-center justify-between"><p className="font-primary text-xl">Corbett The Grand</p><button onClick={() => setIsMobileNavOpen(false)} aria-label="Close navigation" className="p-3 text-2xl">×</button></div>
+ <nav><ul className="flex flex-col gap-2 mt-8">{[...navData.links, { label: "Travel and wedding articles", href: "/blogs" }, { label: "Current stay packages", href: "/offers" }, { label: "How to reach us", href: "/how-to-reach" }].map(item => <li key={item.href}><Link className="block py-3 border-b border-stone-200 text-lg" href={item.href} onClick={() => setIsMobileNavOpen(false)}>{item.label}</Link></li>)}</ul></nav></dialog>;
+}

@@ -1,16 +1,11 @@
-const embededtext = `Hello 
-I’m planning a family vacation at Corbett The Grand.  
-Kindly share details on room options, amenities, and availability for my travel dates.  
-Looking forward to your response.`;
-
+import { whatsappLink } from "@/lib/contact-links";
 export const contacts = {
-  email: ["reservations@corbetthegrand.com", "info@corbettthegrand.com"],
+  email: ["reservation@corbettthegrand.com", "info@corbettthegrand.com"],
   phone: [
     "+91 89589 88800",
     //  "+91 98710 10068"
   ],
-  WhatsAppCta:
-    "https://wa.me/+1 711-745-9883?text=" + encodeURIComponent(embededtext),
+  WhatsAppCta: whatsappLink("stay"),
   addresses: [
     {
       address:

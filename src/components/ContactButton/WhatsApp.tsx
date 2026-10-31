@@ -1,27 +1,5 @@
 "use client";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
-
-function Whatsapp({ whatsAppNumber }: { whatsAppNumber: string }) {
-  const pathName = usePathname();
-
-  if (pathName === "/thank-you/") {
-    return null;
-  }
-  return (
-    <div className={`fixed bottom-24 lg:left-3 left-4 z-20 cursor-pointer`}>
-      <Link
-        href={`https://wa.me/${whatsAppNumber.replace(/\s+/g, "")}?text=Hello%20there!%20I%20would%20like%20to%20know%20more%20about%20your%20services.`}
-        target="_blank"
-        rel="noreferrer"
-        className="w-12 h-12 rounded-full flex items-center justify-center bg-green-500 hover:bg-green-600 transition-all hover:shadow-2xl"
-      >
-        <FaWhatsapp size={29} color="white" />
-        <span className="sr-only">WhatsApp</span>
-      </Link>
-    </div>
-  );
-}
-
-export default Whatsapp;
+import { intentForPath, whatsappLink } from "@/lib/contact-links";
+export default function Whatsapp() { const path = usePathname(); if (path.replace(/\/$/, "") === "/thank-you") return null; return <a href={whatsappLink(intentForPath(path))} aria-label="Enquire on WhatsApp" target="_blank" rel="noopener noreferrer" className="fixed bottom-24 left-4 z-40 w-12 h-12 rounded-full flex items-center justify-center bg-green-700 text-white shadow-lg hover:bg-green-800"><FaWhatsapp size={28} aria-hidden="true" /></a>; }

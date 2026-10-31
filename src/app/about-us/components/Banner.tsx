@@ -1,7 +1,6 @@
 import { AboutUsBannerProps } from "@/@types/@types";
 import {
   Container,
-  SectionWithContainer,
 } from "@/components/sectionComponants";
 import Image from "next/image";
 import Section from "../../../components/sectionComponants/Section";
@@ -36,8 +35,9 @@ const Banner: React.FC<AboutUsBannerProps> = ({
             >
               <Image
                 src={src}
-                alt="view"
-                priority={true}
+                alt={"Corbett The Grand resort view " + (index + 1)}
+                priority={index === 0}
+                sizes="20vw"
                 fill
                 className="w-full h-full object-cover hover:scale-110 duration-1000 transition ease-linear"
               />
