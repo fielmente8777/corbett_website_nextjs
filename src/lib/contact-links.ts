@@ -13,7 +13,7 @@ export const messages: Record<EnquiryIntent, string> = {
 
 export function intentForPath(path: string): EnquiryIntent {
   if (/wedding/.test(path)) return "wedding";
-  if (/corporate|offsite/.test(path)) return "corporate";
+  if (/corporate|offsite|conference|team-building/.test(path)) return "corporate";
   return "stay";
 }
 

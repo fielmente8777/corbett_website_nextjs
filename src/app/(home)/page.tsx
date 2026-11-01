@@ -1,3 +1,4 @@
+import Link from "next/link";
 import LinkCards from "@/components/Editorial/LinkCards";
 import { blogs } from "@/data/blogs";
 import { pageMetadata } from "@/lib/seo";
@@ -23,6 +24,7 @@ function HomePage() {
       <Nearby {...homePageData.nearbyData} />
       <TestimonialSection {...homePageData.testimonialData} />
       <LinkCards title="Plan a little more of your Corbett stay" cards={blogs.slice(0, 3).map(blog => ({ title: blog.title, description: blog.description, href: "/blogs/" + blog.slug, image: blog.image, label: "Read the guide" }))} />
+      <div className="max_width blog-back-link"><Link href="/blogs" className="site-button-outline">Explore all {blogs.length} Corbett guides ↗</Link></div>
     </main>
   );
 }
