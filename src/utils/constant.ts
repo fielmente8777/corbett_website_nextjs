@@ -9,8 +9,10 @@ export const contacts = {
     "+91 89589 88800",
     //  "+91 98710 10068"
   ],
+  // Corbett The Grand WhatsApp Business number
+  whatsapp: "+1 711-745-9883",
   WhatsAppCta:
-    "https://wa.me/+1 711-745-9883?text=" + encodeURIComponent(embededtext),
+    "https://wa.me/17117459883?text=" + encodeURIComponent(embededtext),
   addresses: [
     {
       address:
