@@ -2,6 +2,7 @@
 
 import useBookingForm from "@/hooks/useBookingForm";
 import { countries } from "@/utils/countryCode";
+import Captcha from "./Captcha";
 
 const Form1 = () => {
   const {
@@ -11,6 +12,8 @@ const Form1 = () => {
     formData,
     handleChange,
     setFieldValue,
+    captchaKey,
+    handleCaptchaChange,
   } = useBookingForm({
     includeMessage: true,
     onSubmitSuccess: () => {},
@@ -110,6 +113,8 @@ const Form1 = () => {
           )}
         </>
       ))}
+      <Captcha key={captchaKey} onChange={handleCaptchaChange} variant="light" />
+      {errors.captcha && <p className="text-red-500">{errors.captcha}</p>}
       <button
         type="submit"
         className="bg-secondary rounded-lg text-white text-lg py-4"

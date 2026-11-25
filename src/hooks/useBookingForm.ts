@@ -19,6 +19,7 @@ interface FormErrors {
   email?: string;
   checkIn?: string;
   checkOut?: string;
+  captcha?: string;
   [key: string]: string | undefined;
 }
 
@@ -51,6 +52,17 @@ const useBookingForm = ({
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [formData, setFormData] = useState<BookingFormData>(initialFormData);
   const [errors, setErrors] = useState<FormErrors>({});
+  const [captchaToken, setCaptchaToken] = useState("");
+  const [captchaAnswer, setCaptchaAnswer] = useState("");
+  const [captchaKey, setCaptchaKey] = useState(0);
+
+  const handleCaptchaChange = useCallback((token: string, answer: string) => {
+    setCaptchaToken(token);
+    setCaptchaAnswer(answer);
+    if (answer) {
+      setErrors((prev) => ({ ...prev, captcha: undefined }));
+    }
+  }, []);
 
   const debouncedEmail = useDebounce(formData.email, 500);
   const debouncedPhone = useDebounce(formData.phone, 500);
@@ -138,9 +150,14 @@ const useBookingForm = ({
       isValid = false;
     }
 
+    if (captchaAnswer.length !== 5) {
+      newErrors.captcha = "Please enter the 5-digit captcha code";
+      isValid = false;
+    }
+
     setErrors(newErrors);
     return isValid;
-  }, [formData, includeCheckIn, includeCheckOut]);
+  }, [formData, includeCheckIn, includeCheckOut, captchaAnswer]);
 
   // handle form submission
   const handleChange = (
@@ -201,8 +218,10 @@ const useBookingForm = ({
       const description = descriptionPart.join("\n");
 
       const { data } = await axios.post(
-        "https://nexon.eazotel.com/eazotel/addcontacts",
+        "/api/lead",
         {
+          captchaToken,
+          captchaAnswer,
           Domain: contacts.formDomain,
           Name: formData.name,
           email: formData.email,
@@ -235,6 +254,10 @@ const useBookingForm = ({
       alert("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
+      // captcha token works only once, so load a fresh captcha
+      setCaptchaToken("");
+      setCaptchaAnswer("");
+      setCaptchaKey((k) => k + 1);
     }
   };
 
@@ -253,6 +276,8 @@ const useBookingForm = ({
     handleChange,
     setFieldValue,
     handleSubmit,
+    captchaKey,
+    handleCaptchaChange,
   };
 };
 
