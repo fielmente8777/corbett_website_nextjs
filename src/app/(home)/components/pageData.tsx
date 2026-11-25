@@ -23,7 +23,7 @@ export const homePageData = {
       { label: "ABOUT US", href: "/about-us" },
       {
         label: "Call:" + contacts.phone[0],
-        href: "tel:" + contacts.phone[1] + "",
+        href: "tel:" + contacts.phone[0].replace(/\s+/g, ""),
       },
     ],
     note: "Scroll to explore",

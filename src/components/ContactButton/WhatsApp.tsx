@@ -12,7 +12,7 @@ function Whatsapp({ whatsAppNumber }: { whatsAppNumber: string }) {
   return (
     <div className={`fixed bottom-24 lg:left-3 left-4 z-20 cursor-pointer`}>
       <Link
-        href={`https://wa.me/${whatsAppNumber.replace(/\s+/g, "")}?text=Hello%20there!%20I%20would%20like%20to%20know%20more%20about%20your%20services.`}
+        href={`https://wa.me/${whatsAppNumber.replace(/\D/g, "")}?text=Hello%20there!%20I%20would%20like%20to%20know%20more%20about%20your%20services.`}
         target="_blank"
         rel="noreferrer"
         className="w-12 h-12 rounded-full flex items-center justify-center bg-green-500 hover:bg-green-600 transition-all hover:shadow-2xl"
