@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { useDebounce } from "./useDebounce";
 import { contacts } from "@/utils/constant";
 
@@ -52,17 +53,9 @@ const useBookingForm = ({
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [formData, setFormData] = useState<BookingFormData>(initialFormData);
   const [errors, setErrors] = useState<FormErrors>({});
-  const [captchaToken, setCaptchaToken] = useState("");
-  const [captchaAnswer, setCaptchaAnswer] = useState("");
   const [captchaKey, setCaptchaKey] = useState(0);
-
-  const handleCaptchaChange = useCallback((token: string, answer: string) => {
-    setCaptchaToken(token);
-    setCaptchaAnswer(answer);
-    if (answer) {
-      setErrors((prev) => ({ ...prev, captcha: undefined }));
-    }
-  }, []);
+  const [captchaOpen, setCaptchaOpen] = useState(false);
+  const router = useRouter();
 
   const debouncedEmail = useDebounce(formData.email, 500);
   const debouncedPhone = useDebounce(formData.phone, 500);
@@ -150,14 +143,9 @@ const useBookingForm = ({
       isValid = false;
     }
 
-    if (captchaAnswer.length !== 5) {
-      newErrors.captcha = "Please enter the 5-digit captcha code";
-      isValid = false;
-    }
-
     setErrors(newErrors);
     return isValid;
-  }, [formData, includeCheckIn, includeCheckOut, captchaAnswer]);
+  }, [formData, includeCheckIn, includeCheckOut]);
 
   // handle form submission
   const handleChange = (
@@ -197,12 +185,35 @@ const useBookingForm = ({
     setErrors({});
   };
 
-  // handle form submission
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  // Re-mounts the reCAPTCHA checkbox (a token works only once)
+  const reloadCaptcha = () => setCaptchaKey((k) => k + 1);
+
+  // Step 1: Submit -> check fields, then open the captcha popup
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!validateForm()) return;
 
+    setErrors((prev) => ({ ...prev, captcha: undefined }));
+    reloadCaptcha();
+    setCaptchaOpen(true);
+  };
+
+  const closeCaptcha = () => {
+    if (isSubmitting) return;
+    setCaptchaOpen(false);
+    setErrors((prev) => ({ ...prev, captcha: undefined }));
+  };
+
+  const handleCaptchaError = (message: string) => {
+    setErrors((prev) => ({ ...prev, captcha: message }));
+  };
+
+  // Step 2: user ticks "I'm not a robot" in the popup -> send the lead
+  const submitLead = async (captchaToken: string) => {
+    if (isSubmitting || !captchaToken) return;
+
+    setErrors((prev) => ({ ...prev, captcha: undefined }));
     setIsSubmitting(true);
     try {
       const descriptionPart = [];
@@ -221,7 +232,6 @@ const useBookingForm = ({
         "/api/lead",
         {
           captchaToken,
-          captchaAnswer,
           Domain: contacts.formDomain,
           Name: formData.name,
           email: formData.email,
@@ -236,6 +246,7 @@ const useBookingForm = ({
       );
 
       if (data.Status) {
+        setCaptchaOpen(false);
         setSubmitSuccess(true);
         resetForm();
         if (onSubmitSuccess) {
@@ -245,19 +256,24 @@ const useBookingForm = ({
         setTimeout(() => {
           setSubmitSuccess(false);
         }, 3000);
-        window.open("/thank-you/", "_blank");
+        router.push("/thank-you");
       } else {
-        alert(data.message || "Something went wrong. Please try again.");
+        // failed / expired captcha -> keep popup open and show the error there
+        setErrors((prev) => ({
+          ...prev,
+          captcha: data.message || "Something went wrong. Please try again.",
+        }));
       }
     } catch (e) {
       console.error(e);
-      alert("Something went wrong. Please try again.");
+      setErrors((prev) => ({
+        ...prev,
+        captcha: "Something went wrong. Please try again.",
+      }));
     } finally {
       setIsSubmitting(false);
       // captcha token works only once, so load a fresh captcha
-      setCaptchaToken("");
-      setCaptchaAnswer("");
-      setCaptchaKey((k) => k + 1);
+      reloadCaptcha();
     }
   };
 
@@ -277,7 +293,10 @@ const useBookingForm = ({
     setFieldValue,
     handleSubmit,
     captchaKey,
-    handleCaptchaChange,
+    captchaOpen,
+    closeCaptcha,
+    handleCaptchaError,
+    submitLead,
   };
 };
 
