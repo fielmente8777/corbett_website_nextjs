@@ -2,8 +2,8 @@
 
 import { useEffect, useRef } from "react";
 
-// Google reCAPTCHA v2 ("I'm not a robot" checkbox). Server-side check is in src/app/api/lead/route.ts.
-// Backup (not used): Captcha.tsx + api/captcha (self-hosted number code).
+// BACKUP (not used): Google reCAPTCHA v2 ("I'm not a robot" checkbox).
+// Server-side check for it: src/app/api/lead/recaptcha.ts. In use now: CaptchaPopup.tsx (number code).
 
 const SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "";
 const ONLOAD = "__onRecaptchaLoad";

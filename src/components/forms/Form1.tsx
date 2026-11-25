@@ -2,8 +2,7 @@
 
 import useBookingForm from "@/hooks/useBookingForm";
 import { countries } from "@/utils/countryCode";
-import { createPortal } from "react-dom";
-import Recaptcha from "./Recaptcha";
+import CaptchaPopup from "./CaptchaPopup";
 
 const Form1 = () => {
   const {
@@ -16,7 +15,6 @@ const Form1 = () => {
     captchaKey,
     captchaOpen,
     closeCaptcha,
-    handleCaptchaError,
     submitLead,
   } = useBookingForm({
     includeMessage: true,
@@ -130,60 +128,15 @@ const Form1 = () => {
         )}
       </button>
 
-      {captchaOpen &&
-        createPortal(
-          <div
-            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 px-4"
-            onClick={closeCaptcha}
-          >
-            <div
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby="captcha-title"
-              className="relative w-full max-w-sm rounded-xl bg-white p-6 shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
-              onKeyDown={(e) => {
-                if (e.key === "Escape") closeCaptcha();
-              }}
-            >
-              <button
-                type="button"
-                onClick={closeCaptcha}
-                disabled={isSubmitting}
-                aria-label="Close"
-                className="absolute right-3 top-3 text-2xl leading-none text-gray-500 hover:text-black disabled:opacity-50"
-              >
-                &times;
-              </button>
-              <h3 id="captcha-title" className="mb-1 text-lg font-semibold text-black">
-                Verify you&apos;re human
-              </h3>
-              <p className="mb-4 text-sm text-gray-600">
-                Tick the box below to submit your enquiry.
-              </p>
-
-              <Recaptcha
-                key={captchaKey}
-                onVerify={submitLead}
-                onExpire={() => handleCaptchaError("Verification expired. Please tick the box again.")}
-                onError={() => handleCaptchaError("Verification failed. Please try again.")}
-              />
-
-              {isSubmitting && (
-                <div className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-600">
-                  <span className="block h-5 w-5 animate-spin rounded-full border-t-2 border-secondary" />
-                  Submitting your enquiry...
-                </div>
-              )}
-              {errors.captcha && !isSubmitting && (
-                <span role="alert" className="mt-3 block text-center text-sm text-red-500">
-                  {errors.captcha}
-                </span>
-              )}
-            </div>
-          </div>,
-          document.body
-        )}
+      <CaptchaPopup
+        open={captchaOpen}
+        onClose={closeCaptcha}
+        onSubmit={submitLead}
+        isSubmitting={isSubmitting}
+        error={errors.captcha}
+        reloadKey={captchaKey}
+        captchaUrl="/api/captcha"
+      />
     </form>
   );
 };

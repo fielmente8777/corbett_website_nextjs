@@ -185,7 +185,7 @@ const useBookingForm = ({
     setErrors({});
   };
 
-  // Re-mounts the reCAPTCHA checkbox (a token works only once)
+  // Loads a fresh captcha code in the popup (a code can be tried only once)
   const reloadCaptcha = () => setCaptchaKey((k) => k + 1);
 
   // Step 1: Submit -> check fields, then open the captcha popup
@@ -205,13 +205,9 @@ const useBookingForm = ({
     setErrors((prev) => ({ ...prev, captcha: undefined }));
   };
 
-  const handleCaptchaError = (message: string) => {
-    setErrors((prev) => ({ ...prev, captcha: message }));
-  };
-
-  // Step 2: user ticks "I'm not a robot" in the popup -> send the lead
-  const submitLead = async (captchaToken: string) => {
-    if (isSubmitting || !captchaToken) return;
+  // Step 2: user enters the code in the popup -> send the lead
+  const submitLead = async (captchaToken: string, captchaAnswer: string) => {
+    if (isSubmitting || !captchaToken || captchaAnswer.length !== 5) return;
 
     setErrors((prev) => ({ ...prev, captcha: undefined }));
     setIsSubmitting(true);
@@ -232,6 +228,7 @@ const useBookingForm = ({
         "/api/lead",
         {
           captchaToken,
+          captchaAnswer,
           Domain: contacts.formDomain,
           Name: formData.name,
           email: formData.email,
@@ -295,7 +292,6 @@ const useBookingForm = ({
     captchaKey,
     captchaOpen,
     closeCaptcha,
-    handleCaptchaError,
     submitLead,
   };
 };
